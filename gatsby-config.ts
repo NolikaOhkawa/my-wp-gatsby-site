@@ -5,8 +5,21 @@
  * https://www.gatsbyjs.com/docs/gatsby-config/
  *
  */
+import type { GatsbyConfig } from 'gatsby'
 
-module.exports = {
+const config: GatsbyConfig = {
+  siteMetadata: {
+    title: `Norika's Gatsby site`,
+    author: {
+      name: `Norika Okawa`,
+      summary: `who lives and works in San Francisco building useful things.`,
+    },
+    description: `A starter blog demonstrating what Gatsby can do.`,
+    siteUrl: `http://localhost:8000`,
+    social: {
+      twitter: `happyylemon`,
+    },
+  },
   /**
    * Adding plugins to this array adds them to your Gatsby site.
    *
@@ -26,9 +39,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url:
-          process.env.WPGRAPHQL_URL ||
-          `https://wpgatsbydemo.wpengine.com/graphql`,
+        url: process.env.WPGRAPHQL_URL || `http://localhost:8000/graphql`,
       },
     },
 
@@ -67,7 +78,28 @@ module.exports = {
         icon: `content/assets/gatsby-icon.png`,
       },
     },
-
+    // typescript
+    {
+      // See https://www.gatsbyjs.com/plugins/gatsby-plugin-typescript/
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true, // defaults to false
+        jsxPragma: `jsx`, // defaults to "React"
+        allExtensions: true, // defaults to false
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-typegen',
+      options: {
+        emitSchema: {
+          'src/__generated__/gatsby-schema.graphql': true,
+          'src/__generated__/gatsby-introspection.json': true,
+        },
+        emitPluginDocuments: {
+          'src/__generated__/gatsby-plugin-documents.graphql': true,
+        },
+      },
+    },
     // See https://www.gatsbyjs.com/plugins/gatsby-plugin-react-helmet/?=gatsby-plugin-react-helmet
     `gatsby-plugin-react-helmet`,
 
@@ -78,3 +110,5 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 }
+
+export default config

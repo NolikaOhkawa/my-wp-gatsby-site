@@ -1,19 +1,19 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-import parse from "html-react-parser"
+import React from 'react'
+import { Link, graphql } from 'gatsby'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import parse from 'html-react-parser'
 
 // We're using Gutenberg so we need the block styles
 // these are copied into this project due to a conflict in the postCSS
 // version used by the Gatsby and @wordpress packages that causes build
 // failures.
 // @todo update this once @wordpress upgrades their postcss version
-import "../css/@wordpress/block-library/build-style/style.css"
-import "../css/@wordpress/block-library/build-style/theme.css"
+import '../css/@wordpress/block-library/build-style/style.css'
+import '../css/@wordpress/block-library/build-style/theme.css'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Bio from '../components/bio'
+import Layout from '../components/layout'
+import Seo from '../components/seo'
 
 const BlogPostTemplate = ({ data: { previous, next, post } }) => {
   const featuredImage = {
@@ -25,11 +25,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
     <Layout>
       <Seo title={post.title} description={post.excerpt} />
 
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
+      <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
           <h1 itemProp="headline">{parse(post.title)}</h1>
 
@@ -37,17 +33,11 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 
           {/* if we have a featured image for this post let's display it */}
           {featuredImage?.data && (
-            <GatsbyImage
-              image={featuredImage.data}
-              alt={featuredImage.alt}
-              style={{ marginBottom: 50 }}
-            />
+            <GatsbyImage image={featuredImage.data} alt={featuredImage.alt} style={{ marginBottom: 50 }} />
           )}
         </header>
 
-        {!!post.content && (
-          <section itemProp="articleBody">{parse(post.content)}</section>
-        )}
+        {!!post.content && <section itemProp="articleBody">{parse(post.content)}</section>}
 
         <hr />
 
@@ -90,11 +80,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
-  query BlogPostById(
-    $id: String!
-    $previousPostId: String
-    $nextPostId: String
-  ) {
+  query BlogPostById($id: String!, $previousPostId: String, $nextPostId: String) {
     post: wpPost(id: { eq: $id }) {
       id
       excerpt
@@ -106,11 +92,7 @@ export const pageQuery = graphql`
           altText
           localFile {
             childImageSharp {
-              gatsbyImageData(
-                quality: 100
-                placeholder: TRACED_SVG
-                layout: FULL_WIDTH
-              )
+              gatsbyImageData(quality: 100, placeholder: TRACED_SVG, layout: FULL_WIDTH)
             }
           }
         }
