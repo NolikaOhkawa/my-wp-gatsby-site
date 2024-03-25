@@ -1,3 +1,28 @@
+## to Start
+
+- docker name: my_site_local
+  access: http://localhost:8000/
+- Docker では port 8000 で動かしているので、ダブらないよう gatsby のポートを変更する必要がある。
+  `gatsby develop --port 8800`
+  access: http://localhost:8800/
+
+- to acsess the wp
+  1. compose Docker(container "my_site_local")
+  2. access http://localhost:8000/wp-admin
+     - user / password
+     - email: s10124no@gmail.com
+     - - google auth is not required.
+-
+
+## admin
+
+Norika's wp headless website
+
+## trouble shooting
+
+> zsh: segmentation fault gatsby develop --port 8800
+> `npm update`
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">

@@ -5,12 +5,20 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
-const Seo = ({ description, lang, meta, title }) => {
+type Props = Readonly<{
+  description?: string
+  title: string
+  // children?: React.ReactNode
+  lang?: string
+  meta?: Array<{ name: string; content: string }>
+}>
+
+const Seo = ({ description, title, lang, meta }: Props) => {
   const { wp, wpUser } = useStaticQuery(
     graphql`
       query {
@@ -38,7 +46,7 @@ const Seo = ({ description, lang, meta, title }) => {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
       meta={[
         {
           name: `description`,
