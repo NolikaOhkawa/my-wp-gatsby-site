@@ -9,16 +9,15 @@ import type { GatsbyConfig } from 'gatsby'
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Gatsby site`,
+    title: `Norika's Gatsby site`,
     author: {
-      name: `mock`,
+      name: `Norika Okawa`,
       summary: `who lives and works in San Francisco building useful things.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    // siteUrl: `https://ev-site01.pid-dev.tokyo/`,
     siteUrl: `http://localhost:8000`,
     social: {
-      twitter: `test`,
+      twitter: `happyylemon`,
     },
   },
   /**
@@ -40,7 +39,6 @@ const config: GatsbyConfig = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        // url: process.env.WPGRAPHQL_URL || `https://ev-site01.pid-dev.tokyo/graphql`,
         url: process.env.WPGRAPHQL_URL || `http://localhost:8000/graphql`,
       },
     },
