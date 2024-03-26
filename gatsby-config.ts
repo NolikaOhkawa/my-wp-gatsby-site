@@ -17,7 +17,7 @@ const config: GatsbyConfig = {
     description: `A starter blog demonstrating what Gatsby can do.`,
     siteUrl: `https://ev-site01.pid-dev.tokyo/`,
     social: {
-      twitter: `happyylemon`,
+      twitter: `test`,
     },
   },
   /**
