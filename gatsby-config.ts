@@ -9,13 +9,13 @@ import type { GatsbyConfig } from 'gatsby'
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Norika's Gatsby site`,
+    title: `Gatsby site`,
     author: {
-      name: `Norika Okawa`,
+      name: `mock`,
       summary: `who lives and works in San Francisco building useful things.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `http://localhost:8000`,
+    siteUrl: `https://ev-site01.pid-dev.tokyo/`,
     social: {
       twitter: `happyylemon`,
     },
