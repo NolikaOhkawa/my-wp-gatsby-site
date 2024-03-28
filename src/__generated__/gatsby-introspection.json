@@ -4202,6 +4202,18 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "url",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -5038,6 +5050,18 @@
             "defaultValue": null,
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "url",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "interfaces": null,
@@ -5525,6 +5549,18 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "IntQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "url",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -6326,6 +6362,18 @@
           },
           {
             "name": "uid",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "url",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -15985,6 +16033,18 @@
                 "defaultValue": null,
                 "isDeprecated": false,
                 "deprecationReason": null
+              },
+              {
+                "name": "url",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
               }
             ],
             "type": {
@@ -16858,7 +16918,43 @@
                 "deprecationReason": null
               },
               {
+                "name": "isComment",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "isContentNode",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isFrontPage",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isPostsPage",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -17207,11 +17303,83 @@
                 "deprecationReason": null
               },
               {
+                "name": "isComment",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isContentNode",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isFrontPage",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isPostsPage",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isTermNode",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "karma",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "IntQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "link",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -17292,6 +17460,18 @@
               },
               {
                 "name": "type",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "uri",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -17726,7 +17906,43 @@
                 "deprecationReason": null
               },
               {
+                "name": "isComment",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "isContentNode",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isFrontPage",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isPostsPage",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -18044,6 +18260,18 @@
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "InternalFilterInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isComment",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -18472,7 +18700,43 @@
                 "deprecationReason": null
               },
               {
+                "name": "isComment",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "isContentNode",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isFrontPage",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isPostsPage",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -18858,7 +19122,43 @@
                 "deprecationReason": null
               },
               {
+                "name": "isComment",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "isContentNode",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isFrontPage",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isPostsPage",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -19339,7 +19639,43 @@
                 "deprecationReason": null
               },
               {
+                "name": "isComment",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "isContentNode",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isFrontPage",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isPostsPage",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -20158,7 +20494,43 @@
                 "deprecationReason": null
               },
               {
+                "name": "isComment",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "isContentNode",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isFrontPage",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isPostsPage",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -21357,6 +21729,18 @@
                 "deprecationReason": null
               },
               {
+                "name": "excerpt",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "featuredImage",
                 "description": null,
                 "type": {
@@ -21422,6 +21806,18 @@
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "InternalFilterInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isComment",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -21982,7 +22378,43 @@
                 "deprecationReason": null
               },
               {
+                "name": "isComment",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "isContentNode",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isFrontPage",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isPostsPage",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -22331,7 +22763,43 @@
                 "deprecationReason": null
               },
               {
+                "name": "isComment",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "isContentNode",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isFrontPage",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isPostsPage",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -22584,7 +23052,43 @@
                 "deprecationReason": null
               },
               {
+                "name": "isComment",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "isContentNode",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isFrontPage",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isPostsPage",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -23138,7 +23642,43 @@
                 "deprecationReason": null
               },
               {
+                "name": "isComment",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "isContentNode",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isFrontPage",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isPostsPage",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -23319,7 +23859,43 @@
                 "deprecationReason": null
               },
               {
+                "name": "isComment",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "isContentNode",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isFrontPage",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isPostsPage",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -23536,7 +24112,43 @@
                 "deprecationReason": null
               },
               {
+                "name": "isComment",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "isContentNode",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isFrontPage",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "isPostsPage",
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
@@ -31125,8 +31737,56 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": "Whether the node is a Comment",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
             "description": "Whether the node is a Content Node",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": "Whether the node represents the front page.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": "Whether  the node represents the blog page.",
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -32028,7 +32688,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -32340,7 +33036,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -32989,7 +33721,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -35410,12 +36178,104 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": "Whether the node is a Comment",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isContentNode",
+            "description": "Whether the node is a Content Node",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": "Whether the node represents the front page.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": "Whether  the node represents the blog page.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isTermNode",
+            "description": "Whether the node is a Term",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "karma",
             "description": "Karma value for the comment. This field is equivalent to WP_Comment-&gt;comment_karma and the value matching the &quot;comment_karma&quot; column in SQL.",
             "args": [],
             "type": {
               "kind": "SCALAR",
               "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "link",
+            "description": "The permalink of the comment",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
               "ofType": null
             },
             "isDeprecated": false,
@@ -35506,6 +36366,18 @@
             "deprecationReason": null
           },
           {
+            "name": "uri",
+            "description": "The unique resource identifier path",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "wpParent",
             "description": "Connection between the Comment type and the Comment type",
             "args": [],
@@ -35533,6 +36405,11 @@
           {
             "kind": "INTERFACE",
             "name": "WpNode",
+            "ofType": null
+          },
+          {
+            "kind": "INTERFACE",
+            "name": "WpUniformResourceIdentifiable",
             "ofType": null
           }
         ],
@@ -37463,7 +38340,79 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isTermNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "karma",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "link",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -37548,6 +38497,18 @@
           },
           {
             "name": "type",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "uri",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -37715,11 +38676,83 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isTermNode",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "karma",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "IntQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "link",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -37800,6 +38833,18 @@
           },
           {
             "name": "type",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "uri",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -38304,7 +39349,79 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isTermNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "karma",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "link",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -38389,6 +39506,18 @@
           },
           {
             "name": "type",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "uri",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -41310,8 +42439,56 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": "Whether the node is a Comment",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
             "description": "Whether the node is a Content Node",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": "Whether the node represents the front page.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": "Whether  the node represents the blog page.",
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -42318,7 +43495,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -42606,7 +43819,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -43231,7 +44480,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -43697,7 +44982,12 @@
           },
           {
             "kind": "OBJECT",
-            "name": "WpTemplate_Pagedirpage",
+            "name": "WpTemplate_BbPressCreateTopic",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "WpTemplate_BbPressForumsIndex",
             "ofType": null
           }
         ]
@@ -43962,6 +45252,22 @@
               "ofType": {
                 "kind": "OBJECT",
                 "name": "Internal",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isComment",
+            "description": "Whether the node is a Comment",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
                 "ofType": null
               }
             },
@@ -44967,6 +46273,18 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
             "description": null,
             "type": {
@@ -45404,6 +46722,18 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "InternalFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -46185,6 +47515,18 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "InternalSortInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
               "ofType": null
             },
             "defaultValue": null,
@@ -49097,8 +50439,56 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": "Whether the node is a Comment",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
             "description": "Whether the node is a Content Node",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": "Whether the node represents the front page.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": "Whether  the node represents the blog page.",
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -49931,7 +51321,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -50279,7 +51705,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -50940,7 +52402,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -53353,8 +54851,56 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": "Whether the node is a Comment",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
             "description": "Whether the node is a Content Node",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": "Whether the node represents the front page.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": "Whether  the node represents the blog page.",
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -53976,7 +55522,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -54216,7 +55798,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -54769,7 +56387,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -55847,8 +57501,56 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": "Whether the node is a Comment",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
             "description": "Whether the node is a Content Node",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": "Whether the node represents the front page.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": "Whether  the node represents the blog page.",
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -57281,7 +58983,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -57941,7 +59679,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -59542,7 +61316,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -63835,8 +65645,56 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": "Whether the node is a Comment",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
             "description": "Whether the node is a Content Node",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": "Whether the node represents the front page.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": "Whether  the node represents the blog page.",
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -64383,7 +66241,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -64503,7 +66397,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -64936,7 +66866,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -65948,7 +67914,37 @@
         "interfaces": null,
         "enumValues": [
           {
-            "name": "MAINMENU",
+            "name": "NAVI_FOOTER",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "NAVI_FOOTER_MOBILE",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "NAVI_HEADER",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "NAVI_HEADER_MOBILE",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "NAVI_MOBILE",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "NAVI_MOBILE_SLIDE_IN",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -70165,6 +72161,11 @@
         ],
         "enumValues": null,
         "possibleTypes": [
+          {
+            "kind": "OBJECT",
+            "name": "WpPage",
+            "ofType": null
+          },
           {
             "kind": "OBJECT",
             "name": "WpPost",
@@ -78034,6 +80035,18 @@
             "deprecationReason": null
           },
           {
+            "name": "excerpt",
+            "description": "The excerpt of the post.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "featuredImage",
             "description": "Connection between the NodeWithFeaturedImage type and the MediaItem type",
             "args": [],
@@ -78107,6 +80120,22 @@
               "ofType": {
                 "kind": "OBJECT",
                 "name": "Internal",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isComment",
+            "description": "Whether the node is a Comment",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
                 "ofType": null
               }
             },
@@ -78546,6 +80575,11 @@
           {
             "kind": "INTERFACE",
             "name": "WpNodeWithContentEditor",
+            "ofType": null
+          },
+          {
+            "kind": "INTERFACE",
+            "name": "WpNodeWithExcerpt",
             "ofType": null
           },
           {
@@ -79297,6 +81331,18 @@
             "deprecationReason": null
           },
           {
+            "name": "excerpt",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "featuredImage",
             "description": null,
             "type": {
@@ -79362,6 +81408,18 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "InternalFieldSelector",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
               "ofType": null
             },
             "defaultValue": null,
@@ -79837,6 +81895,18 @@
             "deprecationReason": null
           },
           {
+            "name": "excerpt",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "featuredImage",
             "description": null,
             "type": {
@@ -79902,6 +81972,18 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "InternalFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -80923,6 +83005,18 @@
             "deprecationReason": null
           },
           {
+            "name": "excerpt",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "featuredImage",
             "description": null,
             "type": {
@@ -80988,6 +83082,18 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "InternalSortInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
               "ofType": null
             },
             "defaultValue": null,
@@ -82102,8 +84208,56 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": "Whether the node is a Comment",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
             "description": "Whether the node is a Content Node",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": "Whether the node represents the front page.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": "Whether  the node represents the blog page.",
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -83382,7 +85536,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -83922,7 +86112,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -84317,8 +86543,56 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": "Whether the node is a Comment",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
             "description": "Whether the node is a Content Node",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": "Whether the node represents the front page.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": "Whether  the node represents the blog page.",
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -85119,7 +87393,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -85371,7 +87681,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -85960,7 +88306,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -87693,7 +90075,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -92758,8 +95176,56 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": "Whether the node is a Comment",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
             "description": "Whether the node is a Content Node",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": "Whether the node represents the front page.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": "Whether  the node represents the blog page.",
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -93565,7 +96031,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -93817,7 +96319,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -94406,7 +96944,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -98551,7 +101125,37 @@
       },
       {
         "kind": "OBJECT",
-        "name": "WpTemplate_Pagedirpage",
+        "name": "WpTemplate_BbPressCreateTopic",
+        "description": "The template assigned to the node",
+        "specifiedByURL": null,
+        "fields": [
+          {
+            "name": "templateName",
+            "description": "The name of the template",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "WpContentTemplate",
+            "ofType": null
+          }
+        ],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "WpTemplate_BbPressForumsIndex",
         "description": "The template assigned to the node",
         "specifiedByURL": null,
         "fields": [
@@ -98682,8 +101286,56 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": "Whether the node is a Comment",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
             "description": "Whether the node is a Content Node",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": "Whether the node represents the front page.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": "Whether  the node represents the blog page.",
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -99464,7 +102116,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -99680,7 +102368,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -100233,7 +102957,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -100432,8 +103192,56 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": "Whether the node is a Comment",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
             "description": "Whether the node is a Content Node",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": "Whether the node represents the front page.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": "Whether  the node represents the blog page.",
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -100518,6 +103326,11 @@
           {
             "kind": "OBJECT",
             "name": "WpCategory",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "WpComment",
             "ofType": null
           },
           {
@@ -100938,7 +103751,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -101046,7 +103895,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -101467,7 +104352,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -101714,8 +104635,56 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": "Whether the node is a Comment",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
             "description": "Whether the node is a Content Node",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": "Whether the node represents the front page.",
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
+            "description": "Whether  the node represents the blog page.",
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -102640,7 +105609,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -103012,7 +106017,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -105016,7 +108057,43 @@
             "deprecationReason": null
           },
           {
+            "name": "isComment",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "isContentNode",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isFrontPage",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isPostsPage",
             "description": null,
             "type": {
               "kind": "ENUM",
