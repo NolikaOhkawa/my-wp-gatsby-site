@@ -4202,18 +4202,6 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
-          },
-          {
-            "name": "url",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -5050,18 +5038,6 @@
             "defaultValue": null,
             "isDeprecated": false,
             "deprecationReason": null
-          },
-          {
-            "name": "url",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "FieldSelectorEnum",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
           }
         ],
         "interfaces": null,
@@ -5549,18 +5525,6 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "IntQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "url",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringQueryOperatorInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -6362,18 +6326,6 @@
           },
           {
             "name": "uid",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "SortOrderEnum",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "url",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -16033,18 +15985,6 @@
                 "defaultValue": null,
                 "isDeprecated": false,
                 "deprecationReason": null
-              },
-              {
-                "name": "url",
-                "description": null,
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "StringQueryOperatorInput",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
               }
             ],
             "type": {
@@ -21729,18 +21669,6 @@
                 "deprecationReason": null
               },
               {
-                "name": "excerpt",
-                "description": null,
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "StringQueryOperatorInput",
-                  "ofType": null
-                },
-                "defaultValue": null,
-                "isDeprecated": false,
-                "deprecationReason": null
-              },
-              {
                 "name": "featuredImage",
                 "description": null,
                 "type": {
@@ -26904,18 +26832,6 @@
             "deprecationReason": null
           },
           {
-            "name": "host",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "FieldSelectorEnum",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "id",
             "description": null,
             "type": {
@@ -26977,18 +26893,6 @@
           },
           {
             "name": "polyfill",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "FieldSelectorEnum",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "port",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -30000,6 +29904,18 @@
             "deprecationReason": null
           },
           {
+            "name": "baseUrl",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "description",
             "description": null,
             "args": [],
@@ -30217,6 +30133,18 @@
             "deprecationReason": null
           },
           {
+            "name": "baseUrl",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "description",
             "description": null,
             "type": {
@@ -30282,6 +30210,18 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "SiteSiteMetadataAuthorFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "baseUrl",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -30457,6 +30397,18 @@
             "deprecationReason": null
           },
           {
+            "name": "baseUrl",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "description",
             "description": null,
             "type": {
@@ -30553,18 +30505,6 @@
             "deprecationReason": null
           },
           {
-            "name": "host",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "SortOrderEnum",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "id",
             "description": null,
             "type": {
@@ -30626,18 +30566,6 @@
           },
           {
             "name": "polyfill",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "SortOrderEnum",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "port",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -44982,12 +44910,22 @@
           },
           {
             "kind": "OBJECT",
-            "name": "WpTemplate_BbPressCreateTopic",
+            "name": "WpTemplate_PageNoTitle",
             "ofType": null
           },
           {
             "kind": "OBJECT",
-            "name": "WpTemplate_BbPressForumsIndex",
+            "name": "WpTemplate_PageWithSidebar",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "WpTemplate_PageWithWideImage",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "WpTemplate_SingleWithSidebar",
             "ofType": null
           }
         ]
@@ -67914,37 +67852,7 @@
         "interfaces": null,
         "enumValues": [
           {
-            "name": "NAVI_FOOTER",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "NAVI_FOOTER_MOBILE",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "NAVI_HEADER",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "NAVI_HEADER_MOBILE",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "NAVI_MOBILE",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "NAVI_MOBILE_SLIDE_IN",
+            "name": "EMPTY",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -72161,11 +72069,6 @@
         ],
         "enumValues": null,
         "possibleTypes": [
-          {
-            "kind": "OBJECT",
-            "name": "WpPage",
-            "ofType": null
-          },
           {
             "kind": "OBJECT",
             "name": "WpPost",
@@ -80035,18 +79938,6 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt",
-            "description": "The excerpt of the post.",
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "featuredImage",
             "description": "Connection between the NodeWithFeaturedImage type and the MediaItem type",
             "args": [],
@@ -80575,11 +80466,6 @@
           {
             "kind": "INTERFACE",
             "name": "WpNodeWithContentEditor",
-            "ofType": null
-          },
-          {
-            "kind": "INTERFACE",
-            "name": "WpNodeWithExcerpt",
             "ofType": null
           },
           {
@@ -81331,18 +81217,6 @@
             "deprecationReason": null
           },
           {
-            "name": "excerpt",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "FieldSelectorEnum",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "featuredImage",
             "description": null,
             "type": {
@@ -81884,18 +81758,6 @@
           },
           {
             "name": "enclosure",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "StringQueryOperatorInput",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "excerpt",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -82994,18 +82856,6 @@
           },
           {
             "name": "enclosure",
-            "description": null,
-            "type": {
-              "kind": "ENUM",
-              "name": "SortOrderEnum",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "excerpt",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -101125,7 +100975,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "WpTemplate_BbPressCreateTopic",
+        "name": "WpTemplate_PageNoTitle",
         "description": "The template assigned to the node",
         "specifiedByURL": null,
         "fields": [
@@ -101155,7 +101005,67 @@
       },
       {
         "kind": "OBJECT",
-        "name": "WpTemplate_BbPressForumsIndex",
+        "name": "WpTemplate_PageWithSidebar",
+        "description": "The template assigned to the node",
+        "specifiedByURL": null,
+        "fields": [
+          {
+            "name": "templateName",
+            "description": "The name of the template",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "WpContentTemplate",
+            "ofType": null
+          }
+        ],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "WpTemplate_PageWithWideImage",
+        "description": "The template assigned to the node",
+        "specifiedByURL": null,
+        "fields": [
+          {
+            "name": "templateName",
+            "description": "The name of the template",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "WpContentTemplate",
+            "ofType": null
+          }
+        ],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "WpTemplate_SingleWithSidebar",
         "description": "The template assigned to the node",
         "specifiedByURL": null,
         "fields": [

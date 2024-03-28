@@ -16,8 +16,8 @@ const config: GatsbyConfig = {
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
     // siteUrl: `https://ev-site01.pid-dev.tokyo/`,
-    siteUrl: `https://nolyc.net`,
-    baseUrl: `https://nolyc.net`,
+    siteUrl: `https://norika-oh.com/`,
+    baseUrl: `https://norika-oh.com/`,
     social: {
       twitter: `test`,
     },
@@ -43,7 +43,7 @@ const config: GatsbyConfig = {
         // the only required plugin option for WordPress is the GraphQL url.
         // url: process.env.WPGRAPHQL_URL || `https://ev-site01.pid-dev.tokyo/graphql`,
         // url: process.env.WPGRAPHQL_URL || `http://localhost:8000/graphql`,
-        url: process.env.WPGRAPHQL_URL || `https://nolyc.net/graphql`,
+        url: process.env.WPGRAPHQL_URL || `https://norika-oh.com/graphql`,
       },
     },
 

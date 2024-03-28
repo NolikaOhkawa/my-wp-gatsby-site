@@ -409,7 +409,6 @@ type File = Node & {
   readonly size: Scalars['Int'];
   readonly sourceInstanceName: Scalars['String'];
   readonly uid: Scalars['Int'];
-  readonly url: Maybe<Scalars['String']>;
 };
 
 
@@ -554,7 +553,6 @@ type FileFieldSelector = {
   readonly size: InputMaybe<FieldSelectorEnum>;
   readonly sourceInstanceName: InputMaybe<FieldSelectorEnum>;
   readonly uid: InputMaybe<FieldSelectorEnum>;
-  readonly url: InputMaybe<FieldSelectorEnum>;
 };
 
 type FileFilterInput = {
@@ -598,7 +596,6 @@ type FileFilterInput = {
   readonly size: InputMaybe<IntQueryOperatorInput>;
   readonly sourceInstanceName: InputMaybe<StringQueryOperatorInput>;
   readonly uid: InputMaybe<IntQueryOperatorInput>;
-  readonly url: InputMaybe<StringQueryOperatorInput>;
 };
 
 type FileGroupConnection = {
@@ -683,7 +680,6 @@ type FileSortInput = {
   readonly size: InputMaybe<SortOrderEnum>;
   readonly sourceInstanceName: InputMaybe<SortOrderEnum>;
   readonly uid: InputMaybe<SortOrderEnum>;
-  readonly url: InputMaybe<SortOrderEnum>;
 };
 
 type FloatQueryOperatorInput = {
@@ -1807,7 +1803,6 @@ type Query_fileArgs = {
   size: InputMaybe<IntQueryOperatorInput>;
   sourceInstanceName: InputMaybe<StringQueryOperatorInput>;
   uid: InputMaybe<IntQueryOperatorInput>;
-  url: InputMaybe<StringQueryOperatorInput>;
 };
 
 
@@ -2387,7 +2382,6 @@ type Query_wpPageArgs = {
   dateGmt: InputMaybe<DateQueryOperatorInput>;
   desiredSlug: InputMaybe<StringQueryOperatorInput>;
   enclosure: InputMaybe<StringQueryOperatorInput>;
-  excerpt: InputMaybe<StringQueryOperatorInput>;
   featuredImage: InputMaybe<WpNodeWithFeaturedImageToMediaItemConnectionEdgeTypeFilterInput>;
   featuredImageDatabaseId: InputMaybe<IntQueryOperatorInput>;
   featuredImageId: InputMaybe<IDQueryOperatorInput>;
@@ -2940,14 +2934,12 @@ type SiteFieldSelector = {
   readonly buildTime: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly graphqlTypegen: InputMaybe<FieldSelectorEnum>;
-  readonly host: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
   readonly jsxRuntime: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
   readonly pathPrefix: InputMaybe<FieldSelectorEnum>;
   readonly polyfill: InputMaybe<FieldSelectorEnum>;
-  readonly port: InputMaybe<FieldSelectorEnum>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataFieldSelector>;
   readonly trailingSlash: InputMaybe<FieldSelectorEnum>;
 };
@@ -3443,6 +3435,7 @@ type SitePluginSortInput = {
 
 type SiteSiteMetadata = {
   readonly author: Maybe<SiteSiteMetadataAuthor>;
+  readonly baseUrl: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
   readonly siteUrl: Maybe<Scalars['String']>;
   readonly social: Maybe<SiteSiteMetadataSocial>;
@@ -3471,6 +3464,7 @@ type SiteSiteMetadataAuthorSortInput = {
 
 type SiteSiteMetadataFieldSelector = {
   readonly author: InputMaybe<SiteSiteMetadataAuthorFieldSelector>;
+  readonly baseUrl: InputMaybe<FieldSelectorEnum>;
   readonly description: InputMaybe<FieldSelectorEnum>;
   readonly siteUrl: InputMaybe<FieldSelectorEnum>;
   readonly social: InputMaybe<SiteSiteMetadataSocialFieldSelector>;
@@ -3479,6 +3473,7 @@ type SiteSiteMetadataFieldSelector = {
 
 type SiteSiteMetadataFilterInput = {
   readonly author: InputMaybe<SiteSiteMetadataAuthorFilterInput>;
+  readonly baseUrl: InputMaybe<StringQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly siteUrl: InputMaybe<StringQueryOperatorInput>;
   readonly social: InputMaybe<SiteSiteMetadataSocialFilterInput>;
@@ -3503,6 +3498,7 @@ type SiteSiteMetadataSocialSortInput = {
 
 type SiteSiteMetadataSortInput = {
   readonly author: InputMaybe<SiteSiteMetadataAuthorSortInput>;
+  readonly baseUrl: InputMaybe<SortOrderEnum>;
   readonly description: InputMaybe<SortOrderEnum>;
   readonly siteUrl: InputMaybe<SortOrderEnum>;
   readonly social: InputMaybe<SiteSiteMetadataSocialSortInput>;
@@ -3513,14 +3509,12 @@ type SiteSortInput = {
   readonly buildTime: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly graphqlTypegen: InputMaybe<SortOrderEnum>;
-  readonly host: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
   readonly jsxRuntime: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
   readonly pathPrefix: InputMaybe<SortOrderEnum>;
   readonly polyfill: InputMaybe<SortOrderEnum>;
-  readonly port: InputMaybe<SortOrderEnum>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataSortInput>;
   readonly trailingSlash: InputMaybe<SortOrderEnum>;
 };
@@ -7891,12 +7885,7 @@ type WpMenuItemToMenuItemLinkableConnectionEdgeTypeSortInput = {
 
 /** Registered menu locations */
 type WpMenuLocationEnum =
-  | 'NAVI_FOOTER'
-  | 'NAVI_FOOTER_MOBILE'
-  | 'NAVI_HEADER'
-  | 'NAVI_HEADER_MOBILE'
-  | 'NAVI_MOBILE'
-  | 'NAVI_MOBILE_SLIDE_IN';
+  | 'EMPTY';
 
 type WpMenuLocationEnumQueryOperatorInput = {
   readonly eq: InputMaybe<WpMenuLocationEnum>;
@@ -9293,7 +9282,7 @@ type WpOneToOneConnectionType = {
 };
 
 /** The page type */
-type WpPage = Node & WpContentNode & WpDatabaseIdentifier & WpHierarchicalContentNode & WpHierarchicalNode & WpMenuItemLinkable & WpNode & WpNodeWithAuthor & WpNodeWithComments & WpNodeWithContentEditor & WpNodeWithExcerpt & WpNodeWithFeaturedImage & WpNodeWithPageAttributes & WpNodeWithRevisions & WpNodeWithTemplate & WpNodeWithTitle & WpUniformResourceIdentifiable & {
+type WpPage = Node & WpContentNode & WpDatabaseIdentifier & WpHierarchicalContentNode & WpHierarchicalNode & WpMenuItemLinkable & WpNode & WpNodeWithAuthor & WpNodeWithComments & WpNodeWithContentEditor & WpNodeWithFeaturedImage & WpNodeWithPageAttributes & WpNodeWithRevisions & WpNodeWithTemplate & WpNodeWithTitle & WpUniformResourceIdentifiable & {
   /** Returns ancestors of the node. Default ordered as lowest (closest to the child) to highest (closest to the root). */
   readonly ancestors: Maybe<WpHierarchicalContentNodeToContentNodeAncestorsConnectionType>;
   /** Connection between the NodeWithAuthor type and the User type */
@@ -9325,8 +9314,6 @@ type WpPage = Node & WpContentNode & WpDatabaseIdentifier & WpHierarchicalConten
   readonly desiredSlug: Maybe<Scalars['String']>;
   /** The RSS enclosure for the object */
   readonly enclosure: Maybe<Scalars['String']>;
-  /** The excerpt of the post. */
-  readonly excerpt: Maybe<Scalars['String']>;
   /** Connection between the NodeWithFeaturedImage type and the MediaItem type */
   readonly featuredImage: Maybe<WpNodeWithFeaturedImageToMediaItemConnectionEdgeType>;
   /** The database identifier for the featured image node assigned to the content node */
@@ -9504,7 +9491,6 @@ type WpPageFieldSelector = {
   readonly dateGmt: InputMaybe<FieldSelectorEnum>;
   readonly desiredSlug: InputMaybe<FieldSelectorEnum>;
   readonly enclosure: InputMaybe<FieldSelectorEnum>;
-  readonly excerpt: InputMaybe<FieldSelectorEnum>;
   readonly featuredImage: InputMaybe<WpNodeWithFeaturedImageToMediaItemConnectionEdgeTypeFieldSelector>;
   readonly featuredImageDatabaseId: InputMaybe<FieldSelectorEnum>;
   readonly featuredImageId: InputMaybe<FieldSelectorEnum>;
@@ -9553,7 +9539,6 @@ type WpPageFilterInput = {
   readonly dateGmt: InputMaybe<DateQueryOperatorInput>;
   readonly desiredSlug: InputMaybe<StringQueryOperatorInput>;
   readonly enclosure: InputMaybe<StringQueryOperatorInput>;
-  readonly excerpt: InputMaybe<StringQueryOperatorInput>;
   readonly featuredImage: InputMaybe<WpNodeWithFeaturedImageToMediaItemConnectionEdgeTypeFilterInput>;
   readonly featuredImageDatabaseId: InputMaybe<IntQueryOperatorInput>;
   readonly featuredImageId: InputMaybe<IDQueryOperatorInput>;
@@ -9658,7 +9643,6 @@ type WpPageSortInput = {
   readonly dateGmt: InputMaybe<SortOrderEnum>;
   readonly desiredSlug: InputMaybe<SortOrderEnum>;
   readonly enclosure: InputMaybe<SortOrderEnum>;
-  readonly excerpt: InputMaybe<SortOrderEnum>;
   readonly featuredImage: InputMaybe<WpNodeWithFeaturedImageToMediaItemConnectionEdgeTypeSortInput>;
   readonly featuredImageDatabaseId: InputMaybe<SortOrderEnum>;
   readonly featuredImageId: InputMaybe<SortOrderEnum>;
@@ -11797,13 +11781,25 @@ type WpTaxonomyToTermNodeConnectionTypeSortInput = {
 };
 
 /** The template assigned to the node */
-type WpTemplate_BbPressCreateTopic = WpContentTemplate & {
+type WpTemplate_PageNoTitle = WpContentTemplate & {
   /** The name of the template */
   readonly templateName: Maybe<Scalars['String']>;
 };
 
 /** The template assigned to the node */
-type WpTemplate_BbPressForumsIndex = WpContentTemplate & {
+type WpTemplate_PageWithSidebar = WpContentTemplate & {
+  /** The name of the template */
+  readonly templateName: Maybe<Scalars['String']>;
+};
+
+/** The template assigned to the node */
+type WpTemplate_PageWithWideImage = WpContentTemplate & {
+  /** The name of the template */
+  readonly templateName: Maybe<Scalars['String']>;
+};
+
+/** The template assigned to the node */
+type WpTemplate_SingleWithSidebar = WpContentTemplate & {
   /** The name of the template */
   readonly templateName: Maybe<Scalars['String']>;
 };
