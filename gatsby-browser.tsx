@@ -1,9 +1,15 @@
 // custom typefaces
-import "typeface-montserrat"
-import "typeface-merriweather"
+import 'typeface-montserrat'
+import 'typeface-merriweather'
 
 // normalize CSS across browsers
-import "./src/css/normalize.css"
+import './src/styles/css/normalize.css'
 
 // custom CSS styles
-import "./src/css/style.css"
+import './src/styles/css/style.css'
+
+// custom SCSS styles
+import './src/styles/scss/style.scss'
+
+// Tailwind CSS
+import './src/styles/css/global.css'
