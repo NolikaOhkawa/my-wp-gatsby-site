@@ -19543,6 +19543,18 @@
                 "deprecationReason": null
               },
               {
+                "name": "hasPassword",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "height",
                 "description": null,
                 "type": {
@@ -19788,6 +19800,18 @@
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "IDQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "password",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -21717,6 +21741,18 @@
                 "deprecationReason": null
               },
               {
+                "name": "hasPassword",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "id",
                 "description": null,
                 "type": {
@@ -21926,6 +21962,18 @@
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "IDQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "password",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -22282,6 +22330,18 @@
                 "deprecationReason": null
               },
               {
+                "name": "hasPassword",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "BooleanQueryOperatorInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
                 "name": "id",
                 "description": null,
                 "type": {
@@ -22455,6 +22515,18 @@
                 "type": {
                   "kind": "INPUT_OBJECT",
                   "name": "NodeFilterInput",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "password",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "StringQueryOperatorInput",
                   "ofType": null
                 },
                 "defaultValue": null,
@@ -57443,6 +57515,18 @@
             "deprecationReason": null
           },
           {
+            "name": "hasPassword",
+            "description": "Whether the attachment object is password protected.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "height",
             "description": null,
             "args": [],
@@ -57819,6 +57903,18 @@
             "type": {
               "kind": "SCALAR",
               "name": "ID",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "password",
+            "description": "The password for the attachment object.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
               "ofType": null
             },
             "isDeprecated": false,
@@ -58933,6 +59029,18 @@
             "deprecationReason": null
           },
           {
+            "name": "hasPassword",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "height",
             "description": null,
             "type": {
@@ -59174,6 +59282,18 @@
           },
           {
             "name": "parentId",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "password",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -59629,6 +59749,18 @@
             "deprecationReason": null
           },
           {
+            "name": "hasPassword",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "height",
             "description": null,
             "type": {
@@ -59874,6 +60006,18 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "IDQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "password",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -61266,6 +61410,18 @@
             "deprecationReason": null
           },
           {
+            "name": "hasPassword",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "height",
             "description": null,
             "type": {
@@ -61507,6 +61663,18 @@
           },
           {
             "name": "parentId",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "password",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -80034,6 +80202,18 @@
             "deprecationReason": null
           },
           {
+            "name": "hasPassword",
+            "description": "Whether the page object is password protected.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "id",
             "description": null,
             "args": [],
@@ -80374,6 +80554,18 @@
             "type": {
               "kind": "SCALAR",
               "name": "ID",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "password",
+            "description": "The password for the page object.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
               "ofType": null
             },
             "isDeprecated": false,
@@ -81313,6 +81505,18 @@
             "deprecationReason": null
           },
           {
+            "name": "hasPassword",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "id",
             "description": null,
             "type": {
@@ -81518,6 +81722,18 @@
           },
           {
             "name": "parentId",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "password",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -81865,6 +82081,18 @@
             "deprecationReason": null
           },
           {
+            "name": "hasPassword",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "id",
             "description": null,
             "type": {
@@ -82074,6 +82302,18 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "IDQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "password",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -82963,6 +83203,18 @@
             "deprecationReason": null
           },
           {
+            "name": "hasPassword",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "id",
             "description": null,
             "type": {
@@ -83168,6 +83420,18 @@
           },
           {
             "name": "parentId",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "password",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -84074,6 +84338,18 @@
             "deprecationReason": null
           },
           {
+            "name": "hasPassword",
+            "description": "Whether the post object is password protected.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "id",
             "description": null,
             "args": [],
@@ -84378,6 +84654,18 @@
             "type": {
               "kind": "INTERFACE",
               "name": "Node",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "password",
+            "description": "The password for the post object.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
               "ofType": null
             },
             "isDeprecated": false,
@@ -85410,6 +85698,18 @@
             "deprecationReason": null
           },
           {
+            "name": "hasPassword",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "id",
             "description": null,
             "type": {
@@ -85583,6 +85883,18 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "NodeFieldSelector",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "password",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "FieldSelectorEnum",
               "ofType": null
             },
             "defaultValue": null,
@@ -85986,6 +86298,18 @@
             "deprecationReason": null
           },
           {
+            "name": "hasPassword",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "BooleanQueryOperatorInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "id",
             "description": null,
             "type": {
@@ -86159,6 +86483,18 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "NodeFilterInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "password",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "StringQueryOperatorInput",
               "ofType": null
             },
             "defaultValue": null,
@@ -89949,6 +90285,18 @@
             "deprecationReason": null
           },
           {
+            "name": "hasPassword",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "id",
             "description": null,
             "type": {
@@ -90122,6 +90470,18 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "NodeSortInput",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "password",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "SortOrderEnum",
               "ofType": null
             },
             "defaultValue": null,
