@@ -7,7 +7,20 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 import '../styles/scss/style.scss'
 
-const BlogIndex = ({ data, pageContext: { nextPagePath, previousPagePath } }) => {
+interface Post {
+  excerpt: string
+  uri: string
+  date: string
+  title: string
+}
+
+const BlogIndex = ({
+  data,
+  pageContext: { nextPagePath, previousPagePath },
+}: {
+  data: { allWpPost: { nodes: Post[] } }
+  pageContext: { nextPagePath?: string; previousPagePath?: string }
+}) => {
   const posts = data.allWpPost.nodes
 
   if (!posts.length) {
@@ -71,7 +84,6 @@ export const pageQuery = graphql`
         uri
         date(formatString: "MMMM DD, YYYY")
         title
-        excerpt
       }
     }
   }
