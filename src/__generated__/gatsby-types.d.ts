@@ -12949,6 +12949,11 @@ type LayoutQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type LayoutQueryQuery = { readonly wp: { readonly generalSettings: { readonly title: string | null, readonly description: string | null } | null } | null };
 
+type MyQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type MyQueryQuery = { readonly allWpPost: { readonly nodes: ReadonlyArray<{ readonly date: string | null, readonly id: string, readonly title: string | null }> } };
+
 type WordPressPostArchiveQueryVariables = Exact<{
   offset: Scalars['Int'];
   postsPerPage: Scalars['Int'];
