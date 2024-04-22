@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import parse from 'html-react-parser'
 import Header from './header'
+// import { MenuProvider } from '../context/MenuContext'
 
 const Layout = ({ isHomePage, children }) => {
   const {
@@ -21,7 +22,9 @@ const Layout = ({ isHomePage, children }) => {
 
   return (
     <>
+      {/* <MenuProvider> */}
       <Header isHomePage={isHomePage} title={title} />
+
       <div className="global-wrapper" data-is-root-path={isHomePage}>
         {/* <header className="global-header">
         {isHomePage ? (
@@ -46,6 +49,7 @@ const Layout = ({ isHomePage, children }) => {
           by Norika Okawa
         </footer>
       </div>
+      {/* </MenuProvider> */}
     </>
   )
 }

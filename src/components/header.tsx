@@ -9,9 +9,10 @@ import {
   FingerPrintIcon,
   SquaresPlusIcon,
 } from '@heroicons/react/24/outline'
-import { Fragment, useState } from 'react'
-import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
+import { Fragment } from 'react'
+import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import NavDialog from './navDialog'
 
 interface HeaderProps {
   isHomePage: boolean
@@ -69,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ isHomePage, title }) => {
           </Link>
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-              Product
+              Works
               <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
             </Popover.Button>
             <Transition
@@ -122,9 +123,6 @@ const Header: React.FC<HeaderProps> = ({ isHomePage, title }) => {
           <Link to="/contacts" className="text-sm font-semibold leading-6 text-gray-900">
             contacts
           </Link>
-          <Link to="/contacts" className="text-sm font-semibold leading-6 text-gray-900">
-            contacts
-          </Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <button className="text-sm font-semibold leading-6 text-gray-900">EN / JA</button>
@@ -135,6 +133,13 @@ const Header: React.FC<HeaderProps> = ({ isHomePage, title }) => {
           </a>
         </div> */}
       </nav>
+      {/* later  */}
+      <NavDialog
+        products={products}
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
+        callsToAction={callsToAction}
+      />
     </header>
   )
 }
