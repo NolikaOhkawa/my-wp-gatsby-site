@@ -1,4 +1,7 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { RootState, AppDispatch } from '../store/store'
+import { setLanguage } from '../store/languageSlice'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import parse from 'html-react-parser'
 import {
@@ -34,6 +37,8 @@ const callsToAction = [
 
 const Header: React.FC<HeaderProps> = ({ isHomePage, title }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
+  const language = useSelector((state: RootState) => state.language.language)
+  const dispatch = useDispatch<AppDispatch>()
   return (
     <header className="global-header bg-white">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
@@ -125,7 +130,10 @@ const Header: React.FC<HeaderProps> = ({ isHomePage, title }) => {
           </Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <button className="text-sm font-semibold leading-6 text-gray-900">EN / JA</button>
+          <div className="text-sm font-semibold leading-6 text-gray-900">
+            <button onClick={() => dispatch(setLanguage('en'))}>EN</button> /{' '}
+            <button onClick={() => dispatch(setLanguage('ja'))}>JA</button>
+          </div>
         </div>
         {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
