@@ -1,4 +1,7 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { RootState, AppDispatch } from '../store/store'
+import { setLanguage } from '../store/languageSlice'
 import { useState } from 'react'
 import { Dialog, Disclosure } from '@headlessui/react'
 import { XMarkIcon, ChevronDownIcon } from '@heroicons/react/20/solid'
@@ -19,6 +22,10 @@ const NavDialog: React.FC = ({ mobileMenuOpen, setMobileMenuOpen, callsToAction,
       }
     }
   `)
+  const language = useSelector((state: RootState) => state.language.language)
+  const dispatch = useDispatch<AppDispatch>()
+  const langBtnClassEn = `lang_btn_en __${language === 'en' ? 'en' : 'ja'}`
+  const langBtnClassJa = `lang_btn_ja __${language === 'en' ? 'en' : 'ja'}`
 
   const avatarUrl = author?.avatar?.url
 
@@ -95,14 +102,25 @@ const NavDialog: React.FC = ({ mobileMenuOpen, setMobileMenuOpen, callsToAction,
                     Contacts
                   </a>
                 </div>
-                <div className="py-6">
+                <div className="sm:flex-1 sm:justify-end py-6">
+                  <div className="font-semibold leading-6 text-gray-900">
+                    <button className={langBtnClassEn} onClick={() => dispatch(setLanguage('en'))}>
+                      EN
+                    </button>{' '}
+                    <span className="mx-2"> / </span>
+                    <button className={langBtnClassJa} onClick={() => dispatch(setLanguage('ja'))}>
+                      JA
+                    </button>
+                  </div>
+                </div>
+                {/* <div className="py-6">
                   <a
                     href="#"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >
-                    En/Ja
+                    EN / JA
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           </Dialog.Panel>

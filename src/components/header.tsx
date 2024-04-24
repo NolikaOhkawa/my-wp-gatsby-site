@@ -39,6 +39,10 @@ const Header: React.FC<HeaderProps> = ({ isHomePage, title }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false)
   const language = useSelector((state: RootState) => state.language.language)
   const dispatch = useDispatch<AppDispatch>()
+
+  const langBtnClassEn = `lang_btn_en __${language === 'en' ? 'en' : 'ja'}`
+  const langBtnClassJa = `lang_btn_ja __${language === 'en' ? 'en' : 'ja'}`
+
   return (
     <header className="global-header bg-white">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
@@ -131,8 +135,13 @@ const Header: React.FC<HeaderProps> = ({ isHomePage, title }) => {
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <div className="text-sm font-semibold leading-6 text-gray-900">
-            <button onClick={() => dispatch(setLanguage('en'))}>EN</button> /{' '}
-            <button onClick={() => dispatch(setLanguage('ja'))}>JA</button>
+            <button className={langBtnClassEn} onClick={() => dispatch(setLanguage('en'))}>
+              EN
+            </button>{' '}
+            /{' '}
+            <button className={langBtnClassJa} onClick={() => dispatch(setLanguage('ja'))}>
+              JA
+            </button>
           </div>
         </div>
         {/* <div className="hidden lg:flex lg:flex-1 lg:justify-end">

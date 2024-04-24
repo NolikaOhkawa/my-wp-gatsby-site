@@ -1,3 +1,8 @@
+## 20240423
+
+- to do
+  store lang の状態に合わせて表示切り替え
+
 ## to Start
 
 - docker name: my_site_local
