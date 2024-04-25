@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import parse from 'html-react-parser'
 import Header from './header'
+import Footer from './footer'
 // import { MenuProvider } from '../context/MenuContext'
 
 const Layout = ({ isHomePage, children }) => {
@@ -25,7 +26,10 @@ const Layout = ({ isHomePage, children }) => {
       {/* <MenuProvider> */}
       <Header isHomePage={isHomePage} title={title} />
 
-      <div className="global-wrapper" data-is-root-path={isHomePage}>
+      <div
+        className="mx-auto max-w-5xl flex flex-col min-h-screen items-center justify-between p-6 lg:px-8"
+        data-is-root-path={isHomePage}
+      >
         {/* <header className="global-header">
         {isHomePage ? (
           <h1 className="main-heading">
@@ -38,16 +42,9 @@ const Layout = ({ isHomePage, children }) => {
         )}
       </header> */}
 
-        <main>{children}</main>
+        <main className="flex-1">{children}</main>
 
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-          {` `}
-          And <a href="https://wordpress.org/">WordPress </a>
-          by Norika Okawa
-        </footer>
+        <Footer />
       </div>
       {/* </MenuProvider> */}
     </>
