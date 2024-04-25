@@ -4,14 +4,7 @@ import { RootState, AppDispatch } from '../store/store'
 import { setLanguage } from '../store/languageSlice'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import parse from 'html-react-parser'
-import {
-  Bars3Icon,
-  ArrowPathIcon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-} from '@heroicons/react/24/outline'
+import { Bars3Icon, CodeBracketIcon, GiftIcon, PencilSquareIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
@@ -23,16 +16,24 @@ interface HeaderProps {
 }
 
 const products = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
+  {
+    name: 'Engineering',
+    description: 'open source - view GitHub',
+    href: 'https://github.com/NolikaOhkawa',
+    icon: CodeBracketIcon,
+  },
+  { name: 'Products', description: 'Varioius products for web industry ', href: '/products', icon: GiftIcon },
+  {
+    name: 'Illustration',
+    description: 'Have some fun!',
+    href: 'https://www.instagram.com/happyyyylemon/',
+    icon: PencilSquareIcon,
+  },
 ]
 
 const callsToAction = [
   // { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
+  { name: 'Contact', href: '#', icon: PhoneIcon },
 ]
 
 const Header: React.FC<HeaderProps> = ({ isHomePage, title }) => {
@@ -44,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ isHomePage, title }) => {
   const langBtnClassJa = `lang_btn_ja __${language === 'en' ? 'en' : 'ja'}`
 
   return (
-    <header className="global-header bg-white">
+    <header className="global-header bg-white sticky top-0">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           {/* <a href="#" className="-m-1.5 p-1.5">
@@ -75,7 +76,7 @@ const Header: React.FC<HeaderProps> = ({ isHomePage, title }) => {
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Link to="/about" className="text-sm font-semibold leading-6 text-gray-900">
-            about
+            About
           </Link>
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
@@ -127,10 +128,10 @@ const Header: React.FC<HeaderProps> = ({ isHomePage, title }) => {
             </Transition>
           </Popover>
           <Link to="/blog" className="text-sm font-semibold leading-6 text-gray-900">
-            blog
+            Blog
           </Link>
-          <Link to="/contacts" className="text-sm font-semibold leading-6 text-gray-900">
-            contacts
+          <Link to="/contact" className="text-sm font-semibold leading-6 text-gray-900">
+            Contact
           </Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">

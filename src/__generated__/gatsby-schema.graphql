@@ -1267,6 +1267,165 @@ input JSONQueryOperatorInput {
   regex: JSON
 }
 
+enum MarkdownExcerptFormats {
+  HTML
+  MARKDOWN
+  PLAIN
+}
+
+type MarkdownHeading {
+  depth: Int
+  id: String
+  value: String
+}
+
+input MarkdownHeadingFieldSelector {
+  depth: FieldSelectorEnum
+  id: FieldSelectorEnum
+  value: FieldSelectorEnum
+}
+
+input MarkdownHeadingFilterInput {
+  depth: IntQueryOperatorInput
+  id: StringQueryOperatorInput
+  value: StringQueryOperatorInput
+}
+
+input MarkdownHeadingFilterListInput {
+  elemMatch: MarkdownHeadingFilterInput
+}
+
+enum MarkdownHeadingLevels {
+  h1
+  h2
+  h3
+  h4
+  h5
+  h6
+}
+
+input MarkdownHeadingSortInput {
+  depth: SortOrderEnum
+  id: SortOrderEnum
+  value: SortOrderEnum
+}
+
+type MarkdownRemark implements Node {
+  children: [Node!]!
+  excerpt(format: MarkdownExcerptFormats = PLAIN, pruneLength: Int = 140, truncate: Boolean = false): String
+  excerptAst(pruneLength: Int = 140, truncate: Boolean = false): JSON
+  headings(depth: MarkdownHeadingLevels): [MarkdownHeading]
+  html: String
+  htmlAst: JSON
+  id: ID!
+  internal: Internal!
+  parent: Node
+  tableOfContents(absolute: Boolean = false, heading: String, maxDepth: Int, pathToSlugField: String = ""): String
+  timeToRead: Int
+  wordCount: MarkdownWordCount
+}
+
+type MarkdownRemarkConnection {
+  distinct(field: MarkdownRemarkFieldSelector!): [String!]!
+  edges: [MarkdownRemarkEdge!]!
+  group(field: MarkdownRemarkFieldSelector!, limit: Int, skip: Int): [MarkdownRemarkGroupConnection!]!
+  max(field: MarkdownRemarkFieldSelector!): Float
+  min(field: MarkdownRemarkFieldSelector!): Float
+  nodes: [MarkdownRemark!]!
+  pageInfo: PageInfo!
+  sum(field: MarkdownRemarkFieldSelector!): Float
+  totalCount: Int!
+}
+
+type MarkdownRemarkEdge {
+  next: MarkdownRemark
+  node: MarkdownRemark!
+  previous: MarkdownRemark
+}
+
+input MarkdownRemarkFieldSelector {
+  children: NodeFieldSelector
+  excerpt: FieldSelectorEnum
+  excerptAst: FieldSelectorEnum
+  headings: MarkdownHeadingFieldSelector
+  html: FieldSelectorEnum
+  htmlAst: FieldSelectorEnum
+  id: FieldSelectorEnum
+  internal: InternalFieldSelector
+  parent: NodeFieldSelector
+  tableOfContents: FieldSelectorEnum
+  timeToRead: FieldSelectorEnum
+  wordCount: MarkdownWordCountFieldSelector
+}
+
+input MarkdownRemarkFilterInput {
+  children: NodeFilterListInput
+  excerpt: StringQueryOperatorInput
+  excerptAst: JSONQueryOperatorInput
+  headings: MarkdownHeadingFilterListInput
+  html: StringQueryOperatorInput
+  htmlAst: JSONQueryOperatorInput
+  id: StringQueryOperatorInput
+  internal: InternalFilterInput
+  parent: NodeFilterInput
+  tableOfContents: StringQueryOperatorInput
+  timeToRead: IntQueryOperatorInput
+  wordCount: MarkdownWordCountFilterInput
+}
+
+type MarkdownRemarkGroupConnection {
+  distinct(field: MarkdownRemarkFieldSelector!): [String!]!
+  edges: [MarkdownRemarkEdge!]!
+  field: String!
+  fieldValue: String
+  group(field: MarkdownRemarkFieldSelector!, limit: Int, skip: Int): [MarkdownRemarkGroupConnection!]!
+  max(field: MarkdownRemarkFieldSelector!): Float
+  min(field: MarkdownRemarkFieldSelector!): Float
+  nodes: [MarkdownRemark!]!
+  pageInfo: PageInfo!
+  sum(field: MarkdownRemarkFieldSelector!): Float
+  totalCount: Int!
+}
+
+input MarkdownRemarkSortInput {
+  children: NodeSortInput
+  excerpt: SortOrderEnum
+  excerptAst: SortOrderEnum
+  headings: MarkdownHeadingSortInput
+  html: SortOrderEnum
+  htmlAst: SortOrderEnum
+  id: SortOrderEnum
+  internal: InternalSortInput
+  parent: NodeSortInput
+  tableOfContents: SortOrderEnum
+  timeToRead: SortOrderEnum
+  wordCount: MarkdownWordCountSortInput
+}
+
+type MarkdownWordCount {
+  paragraphs: Int
+  sentences: Int
+  words: Int
+}
+
+input MarkdownWordCountFieldSelector {
+  paragraphs: FieldSelectorEnum
+  sentences: FieldSelectorEnum
+  words: FieldSelectorEnum
+}
+
+input MarkdownWordCountFilterInput {
+  paragraphs: IntQueryOperatorInput
+  sentences: IntQueryOperatorInput
+  words: IntQueryOperatorInput
+}
+
+input MarkdownWordCountSortInput {
+  paragraphs: SortOrderEnum
+  sentences: SortOrderEnum
+  words: SortOrderEnum
+}
+
 """Node Interface"""
 interface Node {
   children: [Node!]!
@@ -1340,6 +1499,7 @@ type Query {
   allDirectory(filter: DirectoryFilterInput, limit: Int, skip: Int, sort: [DirectorySortInput]): DirectoryConnection!
   allFile(filter: FileFilterInput, limit: Int, skip: Int, sort: [FileSortInput]): FileConnection!
   allImageSharp(filter: ImageSharpFilterInput, limit: Int, skip: Int, sort: [ImageSharpSortInput]): ImageSharpConnection!
+  allMarkdownRemark(filter: MarkdownRemarkFilterInput, limit: Int, skip: Int, sort: [MarkdownRemarkSortInput]): MarkdownRemarkConnection!
   allSite(filter: SiteFilterInput, limit: Int, skip: Int, sort: [SiteSortInput]): SiteConnection!
   allSiteBuildMetadata(filter: SiteBuildMetadataFilterInput, limit: Int, skip: Int, sort: [SiteBuildMetadataSortInput]): SiteBuildMetadataConnection!
   allSiteFunction(filter: SiteFunctionFilterInput, limit: Int, skip: Int, sort: [SiteFunctionSortInput]): SiteFunctionConnection!
@@ -1380,6 +1540,7 @@ type Query {
   directory(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): Directory
   file(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, childImageSharp: ImageSharpFilterInput, children: NodeFilterListInput, childrenImageSharp: ImageSharpFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, publicURL: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): File
   imageSharp(children: NodeFilterListInput, fixed: ImageSharpFixedFilterInput, fluid: ImageSharpFluidFilterInput, gatsbyImageData: GatsbyImageDataQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, original: ImageSharpOriginalFilterInput, parent: NodeFilterInput, resize: ImageSharpResizeFilterInput): ImageSharp
+  markdownRemark(children: NodeFilterListInput, excerpt: StringQueryOperatorInput, excerptAst: JSONQueryOperatorInput, headings: MarkdownHeadingFilterListInput, html: StringQueryOperatorInput, htmlAst: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, tableOfContents: StringQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: MarkdownWordCountFilterInput): MarkdownRemark
   site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, graphqlTypegen: BooleanQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, jsxRuntime: StringQueryOperatorInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput, trailingSlash: StringQueryOperatorInput): Site
   siteBuildMetadata(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput): SiteBuildMetadata
   siteFunction(absoluteCompiledFilePath: StringQueryOperatorInput, children: NodeFilterListInput, functionRoute: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, matchPath: StringQueryOperatorInput, originalAbsoluteFilePath: StringQueryOperatorInput, originalRelativeFilePath: StringQueryOperatorInput, parent: NodeFilterInput, pluginName: StringQueryOperatorInput, relativeCompiledFilePath: StringQueryOperatorInput): SiteFunction
