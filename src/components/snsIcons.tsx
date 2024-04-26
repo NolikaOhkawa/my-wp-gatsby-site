@@ -40,7 +40,7 @@ const snsIcons: React.FC = () => {
           className="mx-2"
           target="_blank"
           rel="noopener"
-          href="https://twitter.com/happyylemon"
+          href="https://www.linkedin.com/in/nolika-ohkawa-9430189a/"
           aria-label="Go to Norika Okawa's Linked in page"
           title="LinkedIn Page"
         >
@@ -52,7 +52,7 @@ const snsIcons: React.FC = () => {
           className="mx-2"
           target="_blank"
           rel="noopener"
-          href="https://twitter.com/happyylemon"
+          href="https://github.com/NolikaOhkawa"
           aria-label="Go to Norika Okawa's GitHub page"
           title="GitHub Page"
         >
