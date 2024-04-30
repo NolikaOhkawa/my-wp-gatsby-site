@@ -140,6 +140,12 @@ const config: GatsbyConfig = {
      * To learn more, visit: https://gatsby.dev/offline
      */
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `40901251455`,
+      },
+    },
   ],
 }
 
