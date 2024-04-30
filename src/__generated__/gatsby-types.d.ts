@@ -1241,6 +1241,243 @@ type JSONQueryOperatorInput = {
   readonly regex: InputMaybe<Scalars['JSON']>;
 };
 
+type MarkdownExcerptFormats =
+  | 'HTML'
+  | 'MARKDOWN'
+  | 'PLAIN';
+
+type MarkdownHeading = {
+  readonly depth: Maybe<Scalars['Int']>;
+  readonly id: Maybe<Scalars['String']>;
+  readonly value: Maybe<Scalars['String']>;
+};
+
+type MarkdownHeadingFieldSelector = {
+  readonly depth: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly value: InputMaybe<FieldSelectorEnum>;
+};
+
+type MarkdownHeadingFilterInput = {
+  readonly depth: InputMaybe<IntQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly value: InputMaybe<StringQueryOperatorInput>;
+};
+
+type MarkdownHeadingFilterListInput = {
+  readonly elemMatch: InputMaybe<MarkdownHeadingFilterInput>;
+};
+
+type MarkdownHeadingLevels =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6';
+
+type MarkdownHeadingSortInput = {
+  readonly depth: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly value: InputMaybe<SortOrderEnum>;
+};
+
+type MarkdownRemark = Node & {
+  readonly children: ReadonlyArray<Node>;
+  readonly excerpt: Maybe<Scalars['String']>;
+  readonly excerptAst: Maybe<Scalars['JSON']>;
+  readonly headings: Maybe<ReadonlyArray<Maybe<MarkdownHeading>>>;
+  readonly html: Maybe<Scalars['String']>;
+  readonly htmlAst: Maybe<Scalars['JSON']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+  readonly tableOfContents: Maybe<Scalars['String']>;
+  readonly timeToRead: Maybe<Scalars['Int']>;
+  readonly wordCount: Maybe<MarkdownWordCount>;
+};
+
+
+type MarkdownRemark_excerptArgs = {
+  format?: InputMaybe<MarkdownExcerptFormats>;
+  pruneLength?: InputMaybe<Scalars['Int']>;
+  truncate?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+type MarkdownRemark_excerptAstArgs = {
+  pruneLength?: InputMaybe<Scalars['Int']>;
+  truncate?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+type MarkdownRemark_headingsArgs = {
+  depth: InputMaybe<MarkdownHeadingLevels>;
+};
+
+
+type MarkdownRemark_tableOfContentsArgs = {
+  absolute?: InputMaybe<Scalars['Boolean']>;
+  heading: InputMaybe<Scalars['String']>;
+  maxDepth: InputMaybe<Scalars['Int']>;
+  pathToSlugField?: InputMaybe<Scalars['String']>;
+};
+
+type MarkdownRemarkConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<MarkdownRemarkEdge>;
+  readonly group: ReadonlyArray<MarkdownRemarkGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<MarkdownRemark>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type MarkdownRemarkConnection_distinctArgs = {
+  field: MarkdownRemarkFieldSelector;
+};
+
+
+type MarkdownRemarkConnection_groupArgs = {
+  field: MarkdownRemarkFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type MarkdownRemarkConnection_maxArgs = {
+  field: MarkdownRemarkFieldSelector;
+};
+
+
+type MarkdownRemarkConnection_minArgs = {
+  field: MarkdownRemarkFieldSelector;
+};
+
+
+type MarkdownRemarkConnection_sumArgs = {
+  field: MarkdownRemarkFieldSelector;
+};
+
+type MarkdownRemarkEdge = {
+  readonly next: Maybe<MarkdownRemark>;
+  readonly node: MarkdownRemark;
+  readonly previous: Maybe<MarkdownRemark>;
+};
+
+type MarkdownRemarkFieldSelector = {
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly excerpt: InputMaybe<FieldSelectorEnum>;
+  readonly excerptAst: InputMaybe<FieldSelectorEnum>;
+  readonly headings: InputMaybe<MarkdownHeadingFieldSelector>;
+  readonly html: InputMaybe<FieldSelectorEnum>;
+  readonly htmlAst: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly tableOfContents: InputMaybe<FieldSelectorEnum>;
+  readonly timeToRead: InputMaybe<FieldSelectorEnum>;
+  readonly wordCount: InputMaybe<MarkdownWordCountFieldSelector>;
+};
+
+type MarkdownRemarkFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly excerpt: InputMaybe<StringQueryOperatorInput>;
+  readonly excerptAst: InputMaybe<JSONQueryOperatorInput>;
+  readonly headings: InputMaybe<MarkdownHeadingFilterListInput>;
+  readonly html: InputMaybe<StringQueryOperatorInput>;
+  readonly htmlAst: InputMaybe<JSONQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly tableOfContents: InputMaybe<StringQueryOperatorInput>;
+  readonly timeToRead: InputMaybe<IntQueryOperatorInput>;
+  readonly wordCount: InputMaybe<MarkdownWordCountFilterInput>;
+};
+
+type MarkdownRemarkGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<MarkdownRemarkEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<MarkdownRemarkGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<MarkdownRemark>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type MarkdownRemarkGroupConnection_distinctArgs = {
+  field: MarkdownRemarkFieldSelector;
+};
+
+
+type MarkdownRemarkGroupConnection_groupArgs = {
+  field: MarkdownRemarkFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type MarkdownRemarkGroupConnection_maxArgs = {
+  field: MarkdownRemarkFieldSelector;
+};
+
+
+type MarkdownRemarkGroupConnection_minArgs = {
+  field: MarkdownRemarkFieldSelector;
+};
+
+
+type MarkdownRemarkGroupConnection_sumArgs = {
+  field: MarkdownRemarkFieldSelector;
+};
+
+type MarkdownRemarkSortInput = {
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly excerpt: InputMaybe<SortOrderEnum>;
+  readonly excerptAst: InputMaybe<SortOrderEnum>;
+  readonly headings: InputMaybe<MarkdownHeadingSortInput>;
+  readonly html: InputMaybe<SortOrderEnum>;
+  readonly htmlAst: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly tableOfContents: InputMaybe<SortOrderEnum>;
+  readonly timeToRead: InputMaybe<SortOrderEnum>;
+  readonly wordCount: InputMaybe<MarkdownWordCountSortInput>;
+};
+
+type MarkdownWordCount = {
+  readonly paragraphs: Maybe<Scalars['Int']>;
+  readonly sentences: Maybe<Scalars['Int']>;
+  readonly words: Maybe<Scalars['Int']>;
+};
+
+type MarkdownWordCountFieldSelector = {
+  readonly paragraphs: InputMaybe<FieldSelectorEnum>;
+  readonly sentences: InputMaybe<FieldSelectorEnum>;
+  readonly words: InputMaybe<FieldSelectorEnum>;
+};
+
+type MarkdownWordCountFilterInput = {
+  readonly paragraphs: InputMaybe<IntQueryOperatorInput>;
+  readonly sentences: InputMaybe<IntQueryOperatorInput>;
+  readonly words: InputMaybe<IntQueryOperatorInput>;
+};
+
+type MarkdownWordCountSortInput = {
+  readonly paragraphs: InputMaybe<SortOrderEnum>;
+  readonly sentences: InputMaybe<SortOrderEnum>;
+  readonly words: InputMaybe<SortOrderEnum>;
+};
+
 /** Node Interface */
 type Node = {
   readonly children: ReadonlyArray<Node>;
@@ -1313,6 +1550,7 @@ type Query = {
   readonly allDirectory: DirectoryConnection;
   readonly allFile: FileConnection;
   readonly allImageSharp: ImageSharpConnection;
+  readonly allMarkdownRemark: MarkdownRemarkConnection;
   readonly allSite: SiteConnection;
   readonly allSiteBuildMetadata: SiteBuildMetadataConnection;
   readonly allSiteFunction: SiteFunctionConnection;
@@ -1354,6 +1592,7 @@ type Query = {
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
   readonly imageSharp: Maybe<ImageSharp>;
+  readonly markdownRemark: Maybe<MarkdownRemark>;
   readonly site: Maybe<Site>;
   readonly siteBuildMetadata: Maybe<SiteBuildMetadata>;
   readonly siteFunction: Maybe<SiteFunction>;
@@ -1416,6 +1655,14 @@ type Query_allImageSharpArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<ImageSharpSortInput>>>;
+};
+
+
+type Query_allMarkdownRemarkArgs = {
+  filter: InputMaybe<MarkdownRemarkFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<MarkdownRemarkSortInput>>>;
 };
 
 
@@ -1819,6 +2066,22 @@ type Query_imageSharpArgs = {
 };
 
 
+type Query_markdownRemarkArgs = {
+  children: InputMaybe<NodeFilterListInput>;
+  excerpt: InputMaybe<StringQueryOperatorInput>;
+  excerptAst: InputMaybe<JSONQueryOperatorInput>;
+  headings: InputMaybe<MarkdownHeadingFilterListInput>;
+  html: InputMaybe<StringQueryOperatorInput>;
+  htmlAst: InputMaybe<JSONQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  tableOfContents: InputMaybe<StringQueryOperatorInput>;
+  timeToRead: InputMaybe<IntQueryOperatorInput>;
+  wordCount: InputMaybe<MarkdownWordCountFilterInput>;
+};
+
+
 type Query_siteArgs = {
   buildTime: InputMaybe<DateQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
@@ -2164,6 +2427,7 @@ type Query_wpMediaItemArgs = {
   filesize: InputMaybe<IntQueryOperatorInput>;
   gatsbyImage: InputMaybe<GatsbyImageDataQueryOperatorInput>;
   guid: InputMaybe<StringQueryOperatorInput>;
+  hasPassword: InputMaybe<BooleanQueryOperatorInput>;
   height: InputMaybe<IntQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
@@ -2185,6 +2449,7 @@ type Query_wpMediaItemArgs = {
   parent: InputMaybe<NodeFilterInput>;
   parentDatabaseId: InputMaybe<IntQueryOperatorInput>;
   parentId: InputMaybe<IDQueryOperatorInput>;
+  password: InputMaybe<StringQueryOperatorInput>;
   publicUrl: InputMaybe<StringQueryOperatorInput>;
   resize: InputMaybe<RemoteFileResizeFilterInput>;
   sizes: InputMaybe<StringQueryOperatorInput>;
@@ -2386,6 +2651,7 @@ type Query_wpPageArgs = {
   featuredImageDatabaseId: InputMaybe<IntQueryOperatorInput>;
   featuredImageId: InputMaybe<IDQueryOperatorInput>;
   guid: InputMaybe<StringQueryOperatorInput>;
+  hasPassword: InputMaybe<BooleanQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
   isComment: InputMaybe<BooleanQueryOperatorInput>;
@@ -2404,6 +2670,7 @@ type Query_wpPageArgs = {
   parent: InputMaybe<NodeFilterInput>;
   parentDatabaseId: InputMaybe<IntQueryOperatorInput>;
   parentId: InputMaybe<IDQueryOperatorInput>;
+  password: InputMaybe<StringQueryOperatorInput>;
   slug: InputMaybe<StringQueryOperatorInput>;
   status: InputMaybe<StringQueryOperatorInput>;
   template: InputMaybe<WpContentTemplateFilterInput>;
@@ -2436,6 +2703,7 @@ type Query_wpPostArgs = {
   featuredImageDatabaseId: InputMaybe<IntQueryOperatorInput>;
   featuredImageId: InputMaybe<IDQueryOperatorInput>;
   guid: InputMaybe<StringQueryOperatorInput>;
+  hasPassword: InputMaybe<BooleanQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
   isComment: InputMaybe<BooleanQueryOperatorInput>;
@@ -2451,6 +2719,7 @@ type Query_wpPostArgs = {
   modifiedGmt: InputMaybe<DateQueryOperatorInput>;
   nodeType: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
+  password: InputMaybe<StringQueryOperatorInput>;
   pingStatus: InputMaybe<StringQueryOperatorInput>;
   pinged: InputMaybe<StringQueryOperatorInput>;
   postFormats: InputMaybe<WpPostToPostFormatConnectionTypeFilterInput>;
@@ -6652,6 +6921,8 @@ type WpMediaItem = Node & RemoteFile & WpContentNode & WpDatabaseIdentifier & Wp
   readonly gatsbyImage: Maybe<Scalars['GatsbyImageData']>;
   /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
   readonly guid: Maybe<Scalars['String']>;
+  /** Whether the attachment object is password protected. */
+  readonly hasPassword: Maybe<Scalars['Boolean']>;
   readonly height: Maybe<Scalars['Int']>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
@@ -6687,6 +6958,8 @@ type WpMediaItem = Node & RemoteFile & WpContentNode & WpDatabaseIdentifier & Wp
   readonly parentDatabaseId: Maybe<Scalars['Int']>;
   /** The globally unique identifier of the parent node. */
   readonly parentId: Maybe<Scalars['ID']>;
+  /** The password for the attachment object. */
+  readonly password: Maybe<Scalars['String']>;
   readonly publicUrl: Scalars['String'];
   readonly resize: Maybe<RemoteFileResize>;
   /** The sizes attribute value for an image. */
@@ -6870,6 +7143,7 @@ type WpMediaItemFieldSelector = {
   readonly filesize: InputMaybe<FieldSelectorEnum>;
   readonly gatsbyImage: InputMaybe<FieldSelectorEnum>;
   readonly guid: InputMaybe<FieldSelectorEnum>;
+  readonly hasPassword: InputMaybe<FieldSelectorEnum>;
   readonly height: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
@@ -6891,6 +7165,7 @@ type WpMediaItemFieldSelector = {
   readonly parent: InputMaybe<NodeFieldSelector>;
   readonly parentDatabaseId: InputMaybe<FieldSelectorEnum>;
   readonly parentId: InputMaybe<FieldSelectorEnum>;
+  readonly password: InputMaybe<FieldSelectorEnum>;
   readonly publicUrl: InputMaybe<FieldSelectorEnum>;
   readonly resize: InputMaybe<RemoteFileResizeFieldSelector>;
   readonly sizes: InputMaybe<FieldSelectorEnum>;
@@ -6930,6 +7205,7 @@ type WpMediaItemFilterInput = {
   readonly filesize: InputMaybe<IntQueryOperatorInput>;
   readonly gatsbyImage: InputMaybe<GatsbyImageDataQueryOperatorInput>;
   readonly guid: InputMaybe<StringQueryOperatorInput>;
+  readonly hasPassword: InputMaybe<BooleanQueryOperatorInput>;
   readonly height: InputMaybe<IntQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
@@ -6951,6 +7227,7 @@ type WpMediaItemFilterInput = {
   readonly parent: InputMaybe<NodeFilterInput>;
   readonly parentDatabaseId: InputMaybe<IntQueryOperatorInput>;
   readonly parentId: InputMaybe<IDQueryOperatorInput>;
+  readonly password: InputMaybe<StringQueryOperatorInput>;
   readonly publicUrl: InputMaybe<StringQueryOperatorInput>;
   readonly resize: InputMaybe<RemoteFileResizeFilterInput>;
   readonly sizes: InputMaybe<StringQueryOperatorInput>;
@@ -7104,6 +7381,7 @@ type WpMediaItemSortInput = {
   readonly filesize: InputMaybe<SortOrderEnum>;
   readonly gatsbyImage: InputMaybe<SortOrderEnum>;
   readonly guid: InputMaybe<SortOrderEnum>;
+  readonly hasPassword: InputMaybe<SortOrderEnum>;
   readonly height: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
@@ -7125,6 +7403,7 @@ type WpMediaItemSortInput = {
   readonly parent: InputMaybe<NodeSortInput>;
   readonly parentDatabaseId: InputMaybe<SortOrderEnum>;
   readonly parentId: InputMaybe<SortOrderEnum>;
+  readonly password: InputMaybe<SortOrderEnum>;
   readonly publicUrl: InputMaybe<SortOrderEnum>;
   readonly resize: InputMaybe<RemoteFileResizeSortInput>;
   readonly sizes: InputMaybe<SortOrderEnum>;
@@ -9326,6 +9605,8 @@ type WpPage = Node & WpContentNode & WpDatabaseIdentifier & WpHierarchicalConten
   readonly featuredImageId: Maybe<Scalars['ID']>;
   /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
   readonly guid: Maybe<Scalars['String']>;
+  /** Whether the page object is password protected. */
+  readonly hasPassword: Maybe<Scalars['Boolean']>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
   /** Whether the node is a Comment */
@@ -9358,6 +9639,8 @@ type WpPage = Node & WpContentNode & WpDatabaseIdentifier & WpHierarchicalConten
   readonly parentDatabaseId: Maybe<Scalars['Int']>;
   /** The globally unique identifier of the parent node. */
   readonly parentId: Maybe<Scalars['ID']>;
+  /** The password for the page object. */
+  readonly password: Maybe<Scalars['String']>;
   /** The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table. */
   readonly slug: Maybe<Scalars['String']>;
   /** The current status of the object */
@@ -9499,6 +9782,7 @@ type WpPageFieldSelector = {
   readonly featuredImageDatabaseId: InputMaybe<FieldSelectorEnum>;
   readonly featuredImageId: InputMaybe<FieldSelectorEnum>;
   readonly guid: InputMaybe<FieldSelectorEnum>;
+  readonly hasPassword: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
   readonly isComment: InputMaybe<FieldSelectorEnum>;
@@ -9517,6 +9801,7 @@ type WpPageFieldSelector = {
   readonly parent: InputMaybe<NodeFieldSelector>;
   readonly parentDatabaseId: InputMaybe<FieldSelectorEnum>;
   readonly parentId: InputMaybe<FieldSelectorEnum>;
+  readonly password: InputMaybe<FieldSelectorEnum>;
   readonly slug: InputMaybe<FieldSelectorEnum>;
   readonly status: InputMaybe<FieldSelectorEnum>;
   readonly template: InputMaybe<WpContentTemplateFieldSelector>;
@@ -9547,6 +9832,7 @@ type WpPageFilterInput = {
   readonly featuredImageDatabaseId: InputMaybe<IntQueryOperatorInput>;
   readonly featuredImageId: InputMaybe<IDQueryOperatorInput>;
   readonly guid: InputMaybe<StringQueryOperatorInput>;
+  readonly hasPassword: InputMaybe<BooleanQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
   readonly isComment: InputMaybe<BooleanQueryOperatorInput>;
@@ -9565,6 +9851,7 @@ type WpPageFilterInput = {
   readonly parent: InputMaybe<NodeFilterInput>;
   readonly parentDatabaseId: InputMaybe<IntQueryOperatorInput>;
   readonly parentId: InputMaybe<IDQueryOperatorInput>;
+  readonly password: InputMaybe<StringQueryOperatorInput>;
   readonly slug: InputMaybe<StringQueryOperatorInput>;
   readonly status: InputMaybe<StringQueryOperatorInput>;
   readonly template: InputMaybe<WpContentTemplateFilterInput>;
@@ -9651,6 +9938,7 @@ type WpPageSortInput = {
   readonly featuredImageDatabaseId: InputMaybe<SortOrderEnum>;
   readonly featuredImageId: InputMaybe<SortOrderEnum>;
   readonly guid: InputMaybe<SortOrderEnum>;
+  readonly hasPassword: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
   readonly isComment: InputMaybe<SortOrderEnum>;
@@ -9669,6 +9957,7 @@ type WpPageSortInput = {
   readonly parent: InputMaybe<NodeSortInput>;
   readonly parentDatabaseId: InputMaybe<SortOrderEnum>;
   readonly parentId: InputMaybe<SortOrderEnum>;
+  readonly password: InputMaybe<SortOrderEnum>;
   readonly slug: InputMaybe<SortOrderEnum>;
   readonly status: InputMaybe<SortOrderEnum>;
   readonly template: InputMaybe<WpContentTemplateSortInput>;
@@ -9777,6 +10066,8 @@ type WpPost = Node & WpContentNode & WpDatabaseIdentifier & WpMenuItemLinkable &
   readonly featuredImageId: Maybe<Scalars['ID']>;
   /** The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table. */
   readonly guid: Maybe<Scalars['String']>;
+  /** Whether the post object is password protected. */
+  readonly hasPassword: Maybe<Scalars['Boolean']>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
   /** Whether the node is a Comment */
@@ -9803,6 +10094,8 @@ type WpPost = Node & WpContentNode & WpDatabaseIdentifier & WpMenuItemLinkable &
   readonly modifiedGmt: Maybe<Scalars['Date']>;
   readonly nodeType: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
+  /** The password for the post object. */
+  readonly password: Maybe<Scalars['String']>;
   /** Whether the pings are open or closed for this particular post. */
   readonly pingStatus: Maybe<Scalars['String']>;
   /** URLs that have been pinged. */
@@ -9953,6 +10246,7 @@ type WpPostFieldSelector = {
   readonly featuredImageDatabaseId: InputMaybe<FieldSelectorEnum>;
   readonly featuredImageId: InputMaybe<FieldSelectorEnum>;
   readonly guid: InputMaybe<FieldSelectorEnum>;
+  readonly hasPassword: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
   readonly isComment: InputMaybe<FieldSelectorEnum>;
@@ -9968,6 +10262,7 @@ type WpPostFieldSelector = {
   readonly modifiedGmt: InputMaybe<FieldSelectorEnum>;
   readonly nodeType: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly password: InputMaybe<FieldSelectorEnum>;
   readonly pingStatus: InputMaybe<FieldSelectorEnum>;
   readonly pinged: InputMaybe<FieldSelectorEnum>;
   readonly postFormats: InputMaybe<WpPostToPostFormatConnectionTypeFieldSelector>;
@@ -10003,6 +10298,7 @@ type WpPostFilterInput = {
   readonly featuredImageDatabaseId: InputMaybe<IntQueryOperatorInput>;
   readonly featuredImageId: InputMaybe<IDQueryOperatorInput>;
   readonly guid: InputMaybe<StringQueryOperatorInput>;
+  readonly hasPassword: InputMaybe<BooleanQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
   readonly isComment: InputMaybe<BooleanQueryOperatorInput>;
@@ -10018,6 +10314,7 @@ type WpPostFilterInput = {
   readonly modifiedGmt: InputMaybe<DateQueryOperatorInput>;
   readonly nodeType: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
+  readonly password: InputMaybe<StringQueryOperatorInput>;
   readonly pingStatus: InputMaybe<StringQueryOperatorInput>;
   readonly pinged: InputMaybe<StringQueryOperatorInput>;
   readonly postFormats: InputMaybe<WpPostToPostFormatConnectionTypeFilterInput>;
@@ -10464,6 +10761,7 @@ type WpPostSortInput = {
   readonly featuredImageDatabaseId: InputMaybe<SortOrderEnum>;
   readonly featuredImageId: InputMaybe<SortOrderEnum>;
   readonly guid: InputMaybe<SortOrderEnum>;
+  readonly hasPassword: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
   readonly isComment: InputMaybe<SortOrderEnum>;
@@ -10479,6 +10777,7 @@ type WpPostSortInput = {
   readonly modifiedGmt: InputMaybe<SortOrderEnum>;
   readonly nodeType: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
+  readonly password: InputMaybe<SortOrderEnum>;
   readonly pingStatus: InputMaybe<SortOrderEnum>;
   readonly pinged: InputMaybe<SortOrderEnum>;
   readonly postFormats: InputMaybe<WpPostToPostFormatConnectionTypeSortInput>;
