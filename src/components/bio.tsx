@@ -25,9 +25,11 @@ const Bio = () => {
 
   const avatarUrl = author?.avatar?.url
 
+  const avatarImgUrl = '/600x600.jpg'
+
   return (
     <div className="bio">
-      {avatarUrl && <img alt={author?.firstName || ``} className="bio-avatar" src={avatarUrl} />}
+      {avatarUrl && <img alt={author?.firstName || ``} className="bio-avatar" src={avatarImgUrl} />}
       {author?.firstName && (
         <p>
           Written by <strong>{author.firstName}</strong>

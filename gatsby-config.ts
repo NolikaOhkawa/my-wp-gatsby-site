@@ -60,6 +60,25 @@ const config: GatsbyConfig = {
         path: `${__dirname}/content/assets`,
       },
     },
+    // later mdファイルを読み込みたい。
+    // https://takumon.com/how-to-distinct-2-kinds-of-markdown-in-gatsby/
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     // オプションでname(FileNodeにおけるsourceInstanceName)を指定
+    //     name: 'profile',
+    //     path: `${__dirname}/content/profile`,
+    //   },
+    // },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     // オプションでname(FileNodeにおけるsourceInstanceName)を指定
+    //     name: 'other',
+    //     path: `${__dirname}/content/other`,
+    //   },
+    // },
+    'gatsby-transformer-remark',
 
     /**
      * The following two plugins are required if you want to use Gatsby image
@@ -121,6 +140,12 @@ const config: GatsbyConfig = {
      * To learn more, visit: https://gatsby.dev/offline
      */
     // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `40901251455`,
+      },
+    },
   ],
 }
 

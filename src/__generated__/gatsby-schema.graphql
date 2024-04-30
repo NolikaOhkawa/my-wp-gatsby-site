@@ -1267,6 +1267,165 @@ input JSONQueryOperatorInput {
   regex: JSON
 }
 
+enum MarkdownExcerptFormats {
+  HTML
+  MARKDOWN
+  PLAIN
+}
+
+type MarkdownHeading {
+  depth: Int
+  id: String
+  value: String
+}
+
+input MarkdownHeadingFieldSelector {
+  depth: FieldSelectorEnum
+  id: FieldSelectorEnum
+  value: FieldSelectorEnum
+}
+
+input MarkdownHeadingFilterInput {
+  depth: IntQueryOperatorInput
+  id: StringQueryOperatorInput
+  value: StringQueryOperatorInput
+}
+
+input MarkdownHeadingFilterListInput {
+  elemMatch: MarkdownHeadingFilterInput
+}
+
+enum MarkdownHeadingLevels {
+  h1
+  h2
+  h3
+  h4
+  h5
+  h6
+}
+
+input MarkdownHeadingSortInput {
+  depth: SortOrderEnum
+  id: SortOrderEnum
+  value: SortOrderEnum
+}
+
+type MarkdownRemark implements Node {
+  children: [Node!]!
+  excerpt(format: MarkdownExcerptFormats = PLAIN, pruneLength: Int = 140, truncate: Boolean = false): String
+  excerptAst(pruneLength: Int = 140, truncate: Boolean = false): JSON
+  headings(depth: MarkdownHeadingLevels): [MarkdownHeading]
+  html: String
+  htmlAst: JSON
+  id: ID!
+  internal: Internal!
+  parent: Node
+  tableOfContents(absolute: Boolean = false, heading: String, maxDepth: Int, pathToSlugField: String = ""): String
+  timeToRead: Int
+  wordCount: MarkdownWordCount
+}
+
+type MarkdownRemarkConnection {
+  distinct(field: MarkdownRemarkFieldSelector!): [String!]!
+  edges: [MarkdownRemarkEdge!]!
+  group(field: MarkdownRemarkFieldSelector!, limit: Int, skip: Int): [MarkdownRemarkGroupConnection!]!
+  max(field: MarkdownRemarkFieldSelector!): Float
+  min(field: MarkdownRemarkFieldSelector!): Float
+  nodes: [MarkdownRemark!]!
+  pageInfo: PageInfo!
+  sum(field: MarkdownRemarkFieldSelector!): Float
+  totalCount: Int!
+}
+
+type MarkdownRemarkEdge {
+  next: MarkdownRemark
+  node: MarkdownRemark!
+  previous: MarkdownRemark
+}
+
+input MarkdownRemarkFieldSelector {
+  children: NodeFieldSelector
+  excerpt: FieldSelectorEnum
+  excerptAst: FieldSelectorEnum
+  headings: MarkdownHeadingFieldSelector
+  html: FieldSelectorEnum
+  htmlAst: FieldSelectorEnum
+  id: FieldSelectorEnum
+  internal: InternalFieldSelector
+  parent: NodeFieldSelector
+  tableOfContents: FieldSelectorEnum
+  timeToRead: FieldSelectorEnum
+  wordCount: MarkdownWordCountFieldSelector
+}
+
+input MarkdownRemarkFilterInput {
+  children: NodeFilterListInput
+  excerpt: StringQueryOperatorInput
+  excerptAst: JSONQueryOperatorInput
+  headings: MarkdownHeadingFilterListInput
+  html: StringQueryOperatorInput
+  htmlAst: JSONQueryOperatorInput
+  id: StringQueryOperatorInput
+  internal: InternalFilterInput
+  parent: NodeFilterInput
+  tableOfContents: StringQueryOperatorInput
+  timeToRead: IntQueryOperatorInput
+  wordCount: MarkdownWordCountFilterInput
+}
+
+type MarkdownRemarkGroupConnection {
+  distinct(field: MarkdownRemarkFieldSelector!): [String!]!
+  edges: [MarkdownRemarkEdge!]!
+  field: String!
+  fieldValue: String
+  group(field: MarkdownRemarkFieldSelector!, limit: Int, skip: Int): [MarkdownRemarkGroupConnection!]!
+  max(field: MarkdownRemarkFieldSelector!): Float
+  min(field: MarkdownRemarkFieldSelector!): Float
+  nodes: [MarkdownRemark!]!
+  pageInfo: PageInfo!
+  sum(field: MarkdownRemarkFieldSelector!): Float
+  totalCount: Int!
+}
+
+input MarkdownRemarkSortInput {
+  children: NodeSortInput
+  excerpt: SortOrderEnum
+  excerptAst: SortOrderEnum
+  headings: MarkdownHeadingSortInput
+  html: SortOrderEnum
+  htmlAst: SortOrderEnum
+  id: SortOrderEnum
+  internal: InternalSortInput
+  parent: NodeSortInput
+  tableOfContents: SortOrderEnum
+  timeToRead: SortOrderEnum
+  wordCount: MarkdownWordCountSortInput
+}
+
+type MarkdownWordCount {
+  paragraphs: Int
+  sentences: Int
+  words: Int
+}
+
+input MarkdownWordCountFieldSelector {
+  paragraphs: FieldSelectorEnum
+  sentences: FieldSelectorEnum
+  words: FieldSelectorEnum
+}
+
+input MarkdownWordCountFilterInput {
+  paragraphs: IntQueryOperatorInput
+  sentences: IntQueryOperatorInput
+  words: IntQueryOperatorInput
+}
+
+input MarkdownWordCountSortInput {
+  paragraphs: SortOrderEnum
+  sentences: SortOrderEnum
+  words: SortOrderEnum
+}
+
 """Node Interface"""
 interface Node {
   children: [Node!]!
@@ -1340,6 +1499,7 @@ type Query {
   allDirectory(filter: DirectoryFilterInput, limit: Int, skip: Int, sort: [DirectorySortInput]): DirectoryConnection!
   allFile(filter: FileFilterInput, limit: Int, skip: Int, sort: [FileSortInput]): FileConnection!
   allImageSharp(filter: ImageSharpFilterInput, limit: Int, skip: Int, sort: [ImageSharpSortInput]): ImageSharpConnection!
+  allMarkdownRemark(filter: MarkdownRemarkFilterInput, limit: Int, skip: Int, sort: [MarkdownRemarkSortInput]): MarkdownRemarkConnection!
   allSite(filter: SiteFilterInput, limit: Int, skip: Int, sort: [SiteSortInput]): SiteConnection!
   allSiteBuildMetadata(filter: SiteBuildMetadataFilterInput, limit: Int, skip: Int, sort: [SiteBuildMetadataSortInput]): SiteBuildMetadataConnection!
   allSiteFunction(filter: SiteFunctionFilterInput, limit: Int, skip: Int, sort: [SiteFunctionSortInput]): SiteFunctionConnection!
@@ -1380,6 +1540,7 @@ type Query {
   directory(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, changeTime: DateQueryOperatorInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): Directory
   file(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, childImageSharp: ImageSharpFilterInput, children: NodeFilterListInput, childrenImageSharp: ImageSharpFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, publicURL: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): File
   imageSharp(children: NodeFilterListInput, fixed: ImageSharpFixedFilterInput, fluid: ImageSharpFluidFilterInput, gatsbyImageData: GatsbyImageDataQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, original: ImageSharpOriginalFilterInput, parent: NodeFilterInput, resize: ImageSharpResizeFilterInput): ImageSharp
+  markdownRemark(children: NodeFilterListInput, excerpt: StringQueryOperatorInput, excerptAst: JSONQueryOperatorInput, headings: MarkdownHeadingFilterListInput, html: StringQueryOperatorInput, htmlAst: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, tableOfContents: StringQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: MarkdownWordCountFilterInput): MarkdownRemark
   site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, graphqlTypegen: BooleanQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, jsxRuntime: StringQueryOperatorInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput, trailingSlash: StringQueryOperatorInput): Site
   siteBuildMetadata(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput): SiteBuildMetadata
   siteFunction(absoluteCompiledFilePath: StringQueryOperatorInput, children: NodeFilterListInput, functionRoute: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, matchPath: StringQueryOperatorInput, originalAbsoluteFilePath: StringQueryOperatorInput, originalRelativeFilePath: StringQueryOperatorInput, parent: NodeFilterInput, pluginName: StringQueryOperatorInput, relativeCompiledFilePath: StringQueryOperatorInput): SiteFunction
@@ -1394,7 +1555,7 @@ type Query {
   wpHierarchicalContentNode(ancestors: WpHierarchicalContentNodeToContentNodeAncestorsConnectionTypeFilterInput, children: NodeFilterListInput, contentType: WpContentNodeToContentTypeConnectionEdgeTypeFilterInput, contentTypeName: StringQueryOperatorInput, databaseId: IntQueryOperatorInput, date: DateQueryOperatorInput, dateGmt: DateQueryOperatorInput, desiredSlug: StringQueryOperatorInput, enclosure: StringQueryOperatorInput, guid: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isComment: BooleanQueryOperatorInput, isContentNode: BooleanQueryOperatorInput, isFrontPage: BooleanQueryOperatorInput, isPostsPage: BooleanQueryOperatorInput, isTermNode: BooleanQueryOperatorInput, lastEditedBy: WpContentNodeToEditLastConnectionEdgeTypeFilterInput, link: StringQueryOperatorInput, modified: DateQueryOperatorInput, modifiedGmt: DateQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, parentDatabaseId: IntQueryOperatorInput, parentId: IDQueryOperatorInput, slug: StringQueryOperatorInput, status: StringQueryOperatorInput, template: WpContentTemplateFilterInput, uri: StringQueryOperatorInput, wpChildren: WpHierarchicalContentNodeToContentNodeChildrenConnectionTypeFilterInput, wpParent: WpHierarchicalContentNodeToParentContentNodeConnectionEdgeTypeFilterInput): WpHierarchicalContentNode
   wpHierarchicalNode(children: NodeFilterListInput, databaseId: IntQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, parentDatabaseId: IntQueryOperatorInput, parentId: IDQueryOperatorInput): WpHierarchicalNode
   wpHierarchicalTermNode(children: NodeFilterListInput, count: IntQueryOperatorInput, databaseId: IntQueryOperatorInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isComment: BooleanQueryOperatorInput, isContentNode: BooleanQueryOperatorInput, isFrontPage: BooleanQueryOperatorInput, isPostsPage: BooleanQueryOperatorInput, isTermNode: BooleanQueryOperatorInput, link: StringQueryOperatorInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, parentDatabaseId: IntQueryOperatorInput, parentId: IDQueryOperatorInput, slug: StringQueryOperatorInput, taxonomyName: StringQueryOperatorInput, termGroupId: IntQueryOperatorInput, termTaxonomyId: IntQueryOperatorInput, uri: StringQueryOperatorInput): WpHierarchicalTermNode
-  wpMediaItem(altText: StringQueryOperatorInput, ancestors: WpHierarchicalContentNodeToContentNodeAncestorsConnectionTypeFilterInput, author: WpNodeWithAuthorToUserConnectionEdgeTypeFilterInput, authorDatabaseId: IntQueryOperatorInput, authorId: IDQueryOperatorInput, caption: StringQueryOperatorInput, children: NodeFilterListInput, commentCount: IntQueryOperatorInput, commentStatus: StringQueryOperatorInput, comments: WpMediaItemToCommentConnectionTypeFilterInput, contentType: WpContentNodeToContentTypeConnectionEdgeTypeFilterInput, contentTypeName: StringQueryOperatorInput, databaseId: IntQueryOperatorInput, date: DateQueryOperatorInput, dateGmt: DateQueryOperatorInput, description: StringQueryOperatorInput, desiredSlug: StringQueryOperatorInput, enclosure: StringQueryOperatorInput, fileSize: IntQueryOperatorInput, filename: StringQueryOperatorInput, filesize: IntQueryOperatorInput, gatsbyImage: GatsbyImageDataQueryOperatorInput, guid: StringQueryOperatorInput, height: IntQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isComment: BooleanQueryOperatorInput, isContentNode: BooleanQueryOperatorInput, isFrontPage: BooleanQueryOperatorInput, isPostsPage: BooleanQueryOperatorInput, isTermNode: BooleanQueryOperatorInput, lastEditedBy: WpContentNodeToEditLastConnectionEdgeTypeFilterInput, link: StringQueryOperatorInput, localFile: FileFilterInput, mediaDetails: WpMediaDetailsFilterInput, mediaItemUrl: StringQueryOperatorInput, mediaType: StringQueryOperatorInput, mimeType: StringQueryOperatorInput, modified: DateQueryOperatorInput, modifiedGmt: DateQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, parentDatabaseId: IntQueryOperatorInput, parentId: IDQueryOperatorInput, publicUrl: StringQueryOperatorInput, resize: RemoteFileResizeFilterInput, sizes: StringQueryOperatorInput, slug: StringQueryOperatorInput, sourceUrl: StringQueryOperatorInput, srcSet: StringQueryOperatorInput, status: StringQueryOperatorInput, template: WpContentTemplateFilterInput, title: StringQueryOperatorInput, uri: StringQueryOperatorInput, width: IntQueryOperatorInput, wpChildren: WpHierarchicalContentNodeToContentNodeChildrenConnectionTypeFilterInput, wpParent: WpHierarchicalContentNodeToParentContentNodeConnectionEdgeTypeFilterInput): WpMediaItem
+  wpMediaItem(altText: StringQueryOperatorInput, ancestors: WpHierarchicalContentNodeToContentNodeAncestorsConnectionTypeFilterInput, author: WpNodeWithAuthorToUserConnectionEdgeTypeFilterInput, authorDatabaseId: IntQueryOperatorInput, authorId: IDQueryOperatorInput, caption: StringQueryOperatorInput, children: NodeFilterListInput, commentCount: IntQueryOperatorInput, commentStatus: StringQueryOperatorInput, comments: WpMediaItemToCommentConnectionTypeFilterInput, contentType: WpContentNodeToContentTypeConnectionEdgeTypeFilterInput, contentTypeName: StringQueryOperatorInput, databaseId: IntQueryOperatorInput, date: DateQueryOperatorInput, dateGmt: DateQueryOperatorInput, description: StringQueryOperatorInput, desiredSlug: StringQueryOperatorInput, enclosure: StringQueryOperatorInput, fileSize: IntQueryOperatorInput, filename: StringQueryOperatorInput, filesize: IntQueryOperatorInput, gatsbyImage: GatsbyImageDataQueryOperatorInput, guid: StringQueryOperatorInput, hasPassword: BooleanQueryOperatorInput, height: IntQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isComment: BooleanQueryOperatorInput, isContentNode: BooleanQueryOperatorInput, isFrontPage: BooleanQueryOperatorInput, isPostsPage: BooleanQueryOperatorInput, isTermNode: BooleanQueryOperatorInput, lastEditedBy: WpContentNodeToEditLastConnectionEdgeTypeFilterInput, link: StringQueryOperatorInput, localFile: FileFilterInput, mediaDetails: WpMediaDetailsFilterInput, mediaItemUrl: StringQueryOperatorInput, mediaType: StringQueryOperatorInput, mimeType: StringQueryOperatorInput, modified: DateQueryOperatorInput, modifiedGmt: DateQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, parentDatabaseId: IntQueryOperatorInput, parentId: IDQueryOperatorInput, password: StringQueryOperatorInput, publicUrl: StringQueryOperatorInput, resize: RemoteFileResizeFilterInput, sizes: StringQueryOperatorInput, slug: StringQueryOperatorInput, sourceUrl: StringQueryOperatorInput, srcSet: StringQueryOperatorInput, status: StringQueryOperatorInput, template: WpContentTemplateFilterInput, title: StringQueryOperatorInput, uri: StringQueryOperatorInput, width: IntQueryOperatorInput, wpChildren: WpHierarchicalContentNodeToContentNodeChildrenConnectionTypeFilterInput, wpParent: WpHierarchicalContentNodeToParentContentNodeConnectionEdgeTypeFilterInput): WpMediaItem
   wpMenu(children: NodeFilterListInput, count: IntQueryOperatorInput, databaseId: IntQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, locations: WpMenuLocationEnumQueryOperatorInput, menuItems: WpMenuToMenuItemConnectionTypeFilterInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, slug: StringQueryOperatorInput): WpMenu
   wpMenuItem(childItems: WpMenuItemToMenuItemConnectionTypeFilterInput, children: NodeFilterListInput, connectedNode: WpMenuItemToMenuItemLinkableConnectionEdgeTypeFilterInput, cssClasses: StringQueryOperatorInput, databaseId: IntQueryOperatorInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, label: StringQueryOperatorInput, linkRelationship: StringQueryOperatorInput, locations: WpMenuLocationEnumQueryOperatorInput, menu: WpMenuItemToMenuConnectionEdgeTypeFilterInput, nodeType: StringQueryOperatorInput, order: IntQueryOperatorInput, parent: NodeFilterInput, parentDatabaseId: IntQueryOperatorInput, parentId: IDQueryOperatorInput, path: StringQueryOperatorInput, target: StringQueryOperatorInput, title: StringQueryOperatorInput, uri: StringQueryOperatorInput, url: StringQueryOperatorInput): WpMenuItem
   wpMenuItemLinkable(children: NodeFilterListInput, databaseId: IntQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isComment: BooleanQueryOperatorInput, isContentNode: BooleanQueryOperatorInput, isFrontPage: BooleanQueryOperatorInput, isPostsPage: BooleanQueryOperatorInput, isTermNode: BooleanQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, uri: StringQueryOperatorInput): WpMenuItemLinkable
@@ -1408,8 +1569,8 @@ type Query {
   wpNodeWithTemplate(children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, template: WpContentTemplateFilterInput): WpNodeWithTemplate
   wpNodeWithTitle(children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, title: StringQueryOperatorInput): WpNodeWithTitle
   wpNodeWithTrackbacks(children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, pingStatus: StringQueryOperatorInput, pinged: StringQueryOperatorInput, toPing: StringQueryOperatorInput): WpNodeWithTrackbacks
-  wpPage(ancestors: WpHierarchicalContentNodeToContentNodeAncestorsConnectionTypeFilterInput, author: WpNodeWithAuthorToUserConnectionEdgeTypeFilterInput, authorDatabaseId: IntQueryOperatorInput, authorId: IDQueryOperatorInput, children: NodeFilterListInput, commentCount: IntQueryOperatorInput, commentStatus: StringQueryOperatorInput, comments: WpPageToCommentConnectionTypeFilterInput, content: StringQueryOperatorInput, contentType: WpContentNodeToContentTypeConnectionEdgeTypeFilterInput, contentTypeName: StringQueryOperatorInput, databaseId: IntQueryOperatorInput, date: DateQueryOperatorInput, dateGmt: DateQueryOperatorInput, desiredSlug: StringQueryOperatorInput, enclosure: StringQueryOperatorInput, featuredImage: WpNodeWithFeaturedImageToMediaItemConnectionEdgeTypeFilterInput, featuredImageDatabaseId: IntQueryOperatorInput, featuredImageId: IDQueryOperatorInput, guid: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isComment: BooleanQueryOperatorInput, isContentNode: BooleanQueryOperatorInput, isFrontPage: BooleanQueryOperatorInput, isPostsPage: BooleanQueryOperatorInput, isPrivacyPage: BooleanQueryOperatorInput, isRevision: BooleanQueryOperatorInput, isTermNode: BooleanQueryOperatorInput, lastEditedBy: WpContentNodeToEditLastConnectionEdgeTypeFilterInput, link: StringQueryOperatorInput, menuOrder: IntQueryOperatorInput, modified: DateQueryOperatorInput, modifiedGmt: DateQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, parentDatabaseId: IntQueryOperatorInput, parentId: IDQueryOperatorInput, slug: StringQueryOperatorInput, status: StringQueryOperatorInput, template: WpContentTemplateFilterInput, title: StringQueryOperatorInput, uri: StringQueryOperatorInput, wpChildren: WpHierarchicalContentNodeToContentNodeChildrenConnectionTypeFilterInput, wpParent: WpHierarchicalContentNodeToParentContentNodeConnectionEdgeTypeFilterInput): WpPage
-  wpPost(author: WpNodeWithAuthorToUserConnectionEdgeTypeFilterInput, authorDatabaseId: IntQueryOperatorInput, authorId: IDQueryOperatorInput, categories: WpPostToCategoryConnectionTypeFilterInput, children: NodeFilterListInput, commentCount: IntQueryOperatorInput, commentStatus: StringQueryOperatorInput, comments: WpPostToCommentConnectionTypeFilterInput, content: StringQueryOperatorInput, contentType: WpContentNodeToContentTypeConnectionEdgeTypeFilterInput, contentTypeName: StringQueryOperatorInput, databaseId: IntQueryOperatorInput, date: DateQueryOperatorInput, dateGmt: DateQueryOperatorInput, desiredSlug: StringQueryOperatorInput, enclosure: StringQueryOperatorInput, excerpt: StringQueryOperatorInput, featuredImage: WpNodeWithFeaturedImageToMediaItemConnectionEdgeTypeFilterInput, featuredImageDatabaseId: IntQueryOperatorInput, featuredImageId: IDQueryOperatorInput, guid: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isComment: BooleanQueryOperatorInput, isContentNode: BooleanQueryOperatorInput, isFrontPage: BooleanQueryOperatorInput, isPostsPage: BooleanQueryOperatorInput, isRevision: BooleanQueryOperatorInput, isSticky: BooleanQueryOperatorInput, isTermNode: BooleanQueryOperatorInput, lastEditedBy: WpContentNodeToEditLastConnectionEdgeTypeFilterInput, link: StringQueryOperatorInput, modified: DateQueryOperatorInput, modifiedGmt: DateQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, pingStatus: StringQueryOperatorInput, pinged: StringQueryOperatorInput, postFormats: WpPostToPostFormatConnectionTypeFilterInput, slug: StringQueryOperatorInput, status: StringQueryOperatorInput, tags: WpPostToTagConnectionTypeFilterInput, template: WpContentTemplateFilterInput, terms: WpPostToTermNodeConnectionTypeFilterInput, title: StringQueryOperatorInput, toPing: StringQueryOperatorInput, uri: StringQueryOperatorInput): WpPost
+  wpPage(ancestors: WpHierarchicalContentNodeToContentNodeAncestorsConnectionTypeFilterInput, author: WpNodeWithAuthorToUserConnectionEdgeTypeFilterInput, authorDatabaseId: IntQueryOperatorInput, authorId: IDQueryOperatorInput, children: NodeFilterListInput, commentCount: IntQueryOperatorInput, commentStatus: StringQueryOperatorInput, comments: WpPageToCommentConnectionTypeFilterInput, content: StringQueryOperatorInput, contentType: WpContentNodeToContentTypeConnectionEdgeTypeFilterInput, contentTypeName: StringQueryOperatorInput, databaseId: IntQueryOperatorInput, date: DateQueryOperatorInput, dateGmt: DateQueryOperatorInput, desiredSlug: StringQueryOperatorInput, enclosure: StringQueryOperatorInput, featuredImage: WpNodeWithFeaturedImageToMediaItemConnectionEdgeTypeFilterInput, featuredImageDatabaseId: IntQueryOperatorInput, featuredImageId: IDQueryOperatorInput, guid: StringQueryOperatorInput, hasPassword: BooleanQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isComment: BooleanQueryOperatorInput, isContentNode: BooleanQueryOperatorInput, isFrontPage: BooleanQueryOperatorInput, isPostsPage: BooleanQueryOperatorInput, isPrivacyPage: BooleanQueryOperatorInput, isRevision: BooleanQueryOperatorInput, isTermNode: BooleanQueryOperatorInput, lastEditedBy: WpContentNodeToEditLastConnectionEdgeTypeFilterInput, link: StringQueryOperatorInput, menuOrder: IntQueryOperatorInput, modified: DateQueryOperatorInput, modifiedGmt: DateQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, parentDatabaseId: IntQueryOperatorInput, parentId: IDQueryOperatorInput, password: StringQueryOperatorInput, slug: StringQueryOperatorInput, status: StringQueryOperatorInput, template: WpContentTemplateFilterInput, title: StringQueryOperatorInput, uri: StringQueryOperatorInput, wpChildren: WpHierarchicalContentNodeToContentNodeChildrenConnectionTypeFilterInput, wpParent: WpHierarchicalContentNodeToParentContentNodeConnectionEdgeTypeFilterInput): WpPage
+  wpPost(author: WpNodeWithAuthorToUserConnectionEdgeTypeFilterInput, authorDatabaseId: IntQueryOperatorInput, authorId: IDQueryOperatorInput, categories: WpPostToCategoryConnectionTypeFilterInput, children: NodeFilterListInput, commentCount: IntQueryOperatorInput, commentStatus: StringQueryOperatorInput, comments: WpPostToCommentConnectionTypeFilterInput, content: StringQueryOperatorInput, contentType: WpContentNodeToContentTypeConnectionEdgeTypeFilterInput, contentTypeName: StringQueryOperatorInput, databaseId: IntQueryOperatorInput, date: DateQueryOperatorInput, dateGmt: DateQueryOperatorInput, desiredSlug: StringQueryOperatorInput, enclosure: StringQueryOperatorInput, excerpt: StringQueryOperatorInput, featuredImage: WpNodeWithFeaturedImageToMediaItemConnectionEdgeTypeFilterInput, featuredImageDatabaseId: IntQueryOperatorInput, featuredImageId: IDQueryOperatorInput, guid: StringQueryOperatorInput, hasPassword: BooleanQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isComment: BooleanQueryOperatorInput, isContentNode: BooleanQueryOperatorInput, isFrontPage: BooleanQueryOperatorInput, isPostsPage: BooleanQueryOperatorInput, isRevision: BooleanQueryOperatorInput, isSticky: BooleanQueryOperatorInput, isTermNode: BooleanQueryOperatorInput, lastEditedBy: WpContentNodeToEditLastConnectionEdgeTypeFilterInput, link: StringQueryOperatorInput, modified: DateQueryOperatorInput, modifiedGmt: DateQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, password: StringQueryOperatorInput, pingStatus: StringQueryOperatorInput, pinged: StringQueryOperatorInput, postFormats: WpPostToPostFormatConnectionTypeFilterInput, slug: StringQueryOperatorInput, status: StringQueryOperatorInput, tags: WpPostToTagConnectionTypeFilterInput, template: WpContentTemplateFilterInput, terms: WpPostToTermNodeConnectionTypeFilterInput, title: StringQueryOperatorInput, toPing: StringQueryOperatorInput, uri: StringQueryOperatorInput): WpPost
   wpPostFormat(children: NodeFilterListInput, contentNodes: WpPostFormatToContentNodeConnectionTypeFilterInput, count: IntQueryOperatorInput, databaseId: IntQueryOperatorInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isComment: BooleanQueryOperatorInput, isContentNode: BooleanQueryOperatorInput, isFrontPage: BooleanQueryOperatorInput, isPostsPage: BooleanQueryOperatorInput, isTermNode: BooleanQueryOperatorInput, link: StringQueryOperatorInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, posts: WpPostFormatToPostConnectionTypeFilterInput, slug: StringQueryOperatorInput, taxonomy: WpPostFormatToTaxonomyConnectionEdgeTypeFilterInput, taxonomyName: StringQueryOperatorInput, termGroupId: IntQueryOperatorInput, termTaxonomyId: IntQueryOperatorInput, uri: StringQueryOperatorInput): WpPostFormat
   wpTag(children: NodeFilterListInput, contentNodes: WpTagToContentNodeConnectionTypeFilterInput, count: IntQueryOperatorInput, databaseId: IntQueryOperatorInput, description: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, isComment: BooleanQueryOperatorInput, isContentNode: BooleanQueryOperatorInput, isFrontPage: BooleanQueryOperatorInput, isPostsPage: BooleanQueryOperatorInput, isTermNode: BooleanQueryOperatorInput, link: StringQueryOperatorInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, posts: WpTagToPostConnectionTypeFilterInput, slug: StringQueryOperatorInput, taxonomy: WpTagToTaxonomyConnectionEdgeTypeFilterInput, taxonomyName: StringQueryOperatorInput, termGroupId: IntQueryOperatorInput, termTaxonomyId: IntQueryOperatorInput, uri: StringQueryOperatorInput): WpTag
   wpTaxonomy(archivePath: StringQueryOperatorInput, children: NodeFilterListInput, connectedContentTypes: WpTaxonomyToContentTypeConnectionTypeFilterInput, connectedTerms: WpTaxonomyToTermNodeConnectionTypeFilterInput, description: StringQueryOperatorInput, graphqlPluralName: StringQueryOperatorInput, graphqlSingleName: StringQueryOperatorInput, hierarchical: BooleanQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, label: StringQueryOperatorInput, name: StringQueryOperatorInput, nodeType: StringQueryOperatorInput, parent: NodeFilterInput, public: BooleanQueryOperatorInput, restBase: StringQueryOperatorInput, restControllerClass: StringQueryOperatorInput, showCloud: BooleanQueryOperatorInput, showInAdminColumn: BooleanQueryOperatorInput, showInGraphql: BooleanQueryOperatorInput, showInMenu: BooleanQueryOperatorInput, showInNavMenus: BooleanQueryOperatorInput, showInQuickEdit: BooleanQueryOperatorInput, showInRest: BooleanQueryOperatorInput, showUi: BooleanQueryOperatorInput): WpTaxonomy
@@ -5056,6 +5217,9 @@ type WpMediaItem implements Node & RemoteFile & WpContentNode & WpDatabaseIdenti
   The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
   """
   guid: String
+
+  """Whether the attachment object is password protected."""
+  hasPassword: Boolean
   height: Int
   id: ID!
   internal: Internal!
@@ -5141,6 +5305,9 @@ type WpMediaItem implements Node & RemoteFile & WpContentNode & WpDatabaseIdenti
 
   """The globally unique identifier of the parent node."""
   parentId: ID
+
+  """The password for the attachment object."""
+  password: String
   publicUrl: String!
   resize(
     aspectRatio: Float
@@ -5263,6 +5430,7 @@ input WpMediaItemFieldSelector {
   filesize: FieldSelectorEnum
   gatsbyImage: FieldSelectorEnum
   guid: FieldSelectorEnum
+  hasPassword: FieldSelectorEnum
   height: FieldSelectorEnum
   id: FieldSelectorEnum
   internal: InternalFieldSelector
@@ -5284,6 +5452,7 @@ input WpMediaItemFieldSelector {
   parent: NodeFieldSelector
   parentDatabaseId: FieldSelectorEnum
   parentId: FieldSelectorEnum
+  password: FieldSelectorEnum
   publicUrl: FieldSelectorEnum
   resize: RemoteFileResizeFieldSelector
   sizes: FieldSelectorEnum
@@ -5323,6 +5492,7 @@ input WpMediaItemFilterInput {
   filesize: IntQueryOperatorInput
   gatsbyImage: GatsbyImageDataQueryOperatorInput
   guid: StringQueryOperatorInput
+  hasPassword: BooleanQueryOperatorInput
   height: IntQueryOperatorInput
   id: StringQueryOperatorInput
   internal: InternalFilterInput
@@ -5344,6 +5514,7 @@ input WpMediaItemFilterInput {
   parent: NodeFilterInput
   parentDatabaseId: IntQueryOperatorInput
   parentId: IDQueryOperatorInput
+  password: StringQueryOperatorInput
   publicUrl: StringQueryOperatorInput
   resize: RemoteFileResizeFilterInput
   sizes: StringQueryOperatorInput
@@ -5483,6 +5654,7 @@ input WpMediaItemSortInput {
   filesize: SortOrderEnum
   gatsbyImage: SortOrderEnum
   guid: SortOrderEnum
+  hasPassword: SortOrderEnum
   height: SortOrderEnum
   id: SortOrderEnum
   internal: InternalSortInput
@@ -5504,6 +5676,7 @@ input WpMediaItemSortInput {
   parent: NodeSortInput
   parentDatabaseId: SortOrderEnum
   parentId: SortOrderEnum
+  password: SortOrderEnum
   publicUrl: SortOrderEnum
   resize: RemoteFileResizeSortInput
   sizes: SortOrderEnum
@@ -7153,6 +7326,9 @@ type WpPage implements Node & WpContentNode & WpDatabaseIdentifier & WpHierarchi
   The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
   """
   guid: String
+
+  """Whether the page object is password protected."""
+  hasPassword: Boolean
   id: ID!
   internal: Internal!
 
@@ -7237,6 +7413,9 @@ type WpPage implements Node & WpContentNode & WpDatabaseIdentifier & WpHierarchi
 
   """The globally unique identifier of the parent node."""
   parentId: ID
+
+  """The password for the page object."""
+  password: String
 
   """
   The uri slug for the post. This is equivalent to the WP_Post-&gt;post_name field and the post_name column in the database for the &quot;post_objects&quot; table.
@@ -7332,6 +7511,7 @@ input WpPageFieldSelector {
   featuredImageDatabaseId: FieldSelectorEnum
   featuredImageId: FieldSelectorEnum
   guid: FieldSelectorEnum
+  hasPassword: FieldSelectorEnum
   id: FieldSelectorEnum
   internal: InternalFieldSelector
   isComment: FieldSelectorEnum
@@ -7350,6 +7530,7 @@ input WpPageFieldSelector {
   parent: NodeFieldSelector
   parentDatabaseId: FieldSelectorEnum
   parentId: FieldSelectorEnum
+  password: FieldSelectorEnum
   slug: FieldSelectorEnum
   status: FieldSelectorEnum
   template: WpContentTemplateFieldSelector
@@ -7380,6 +7561,7 @@ input WpPageFilterInput {
   featuredImageDatabaseId: IntQueryOperatorInput
   featuredImageId: IDQueryOperatorInput
   guid: StringQueryOperatorInput
+  hasPassword: BooleanQueryOperatorInput
   id: StringQueryOperatorInput
   internal: InternalFilterInput
   isComment: BooleanQueryOperatorInput
@@ -7398,6 +7580,7 @@ input WpPageFilterInput {
   parent: NodeFilterInput
   parentDatabaseId: IntQueryOperatorInput
   parentId: IDQueryOperatorInput
+  password: StringQueryOperatorInput
   slug: StringQueryOperatorInput
   status: StringQueryOperatorInput
   template: WpContentTemplateFilterInput
@@ -7460,6 +7643,7 @@ input WpPageSortInput {
   featuredImageDatabaseId: SortOrderEnum
   featuredImageId: SortOrderEnum
   guid: SortOrderEnum
+  hasPassword: SortOrderEnum
   id: SortOrderEnum
   internal: InternalSortInput
   isComment: SortOrderEnum
@@ -7478,6 +7662,7 @@ input WpPageSortInput {
   parent: NodeSortInput
   parentDatabaseId: SortOrderEnum
   parentId: SortOrderEnum
+  password: SortOrderEnum
   slug: SortOrderEnum
   status: SortOrderEnum
   template: WpContentTemplateSortInput
@@ -7649,6 +7834,9 @@ type WpPost implements Node & WpContentNode & WpDatabaseIdentifier & WpMenuItemL
   The global unique identifier for this post. This currently matches the value stored in WP_Post-&gt;guid and the guid column in the &quot;post_objects&quot; database table.
   """
   guid: String
+
+  """Whether the post object is password protected."""
+  hasPassword: Boolean
   id: ID!
   internal: Internal!
 
@@ -7722,6 +7910,9 @@ type WpPost implements Node & WpContentNode & WpDatabaseIdentifier & WpMenuItemL
   ): Date
   nodeType: String
   parent: Node
+
+  """The password for the post object."""
+  password: String
 
   """Whether the pings are open or closed for this particular post."""
   pingStatus: String
@@ -7828,6 +8019,7 @@ input WpPostFieldSelector {
   featuredImageDatabaseId: FieldSelectorEnum
   featuredImageId: FieldSelectorEnum
   guid: FieldSelectorEnum
+  hasPassword: FieldSelectorEnum
   id: FieldSelectorEnum
   internal: InternalFieldSelector
   isComment: FieldSelectorEnum
@@ -7843,6 +8035,7 @@ input WpPostFieldSelector {
   modifiedGmt: FieldSelectorEnum
   nodeType: FieldSelectorEnum
   parent: NodeFieldSelector
+  password: FieldSelectorEnum
   pingStatus: FieldSelectorEnum
   pinged: FieldSelectorEnum
   postFormats: WpPostToPostFormatConnectionTypeFieldSelector
@@ -7878,6 +8071,7 @@ input WpPostFilterInput {
   featuredImageDatabaseId: IntQueryOperatorInput
   featuredImageId: IDQueryOperatorInput
   guid: StringQueryOperatorInput
+  hasPassword: BooleanQueryOperatorInput
   id: StringQueryOperatorInput
   internal: InternalFilterInput
   isComment: BooleanQueryOperatorInput
@@ -7893,6 +8087,7 @@ input WpPostFilterInput {
   modifiedGmt: DateQueryOperatorInput
   nodeType: StringQueryOperatorInput
   parent: NodeFilterInput
+  password: StringQueryOperatorInput
   pingStatus: StringQueryOperatorInput
   pinged: StringQueryOperatorInput
   postFormats: WpPostToPostFormatConnectionTypeFilterInput
@@ -8288,6 +8483,7 @@ input WpPostSortInput {
   featuredImageDatabaseId: SortOrderEnum
   featuredImageId: SortOrderEnum
   guid: SortOrderEnum
+  hasPassword: SortOrderEnum
   id: SortOrderEnum
   internal: InternalSortInput
   isComment: SortOrderEnum
@@ -8303,6 +8499,7 @@ input WpPostSortInput {
   modifiedGmt: SortOrderEnum
   nodeType: SortOrderEnum
   parent: NodeSortInput
+  password: SortOrderEnum
   pingStatus: SortOrderEnum
   pinged: SortOrderEnum
   postFormats: WpPostToPostFormatConnectionTypeSortInput

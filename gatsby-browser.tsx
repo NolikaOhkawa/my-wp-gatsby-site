@@ -1,3 +1,7 @@
+import React from 'react'
+import { Provider } from 'react-redux'
+import store from './src/store/store'
+
 // custom typefaces
 import 'typeface-montserrat'
 import 'typeface-merriweather'
@@ -13,3 +17,7 @@ import './src/styles/scss/style.scss'
 
 // Tailwind CSS
 import './src/styles/css/global.css'
+
+export const wrapRootElement = ({ element }: { element: React.ReactNode }) => (
+  <Provider store={store}>{element}</Provider>
+)
